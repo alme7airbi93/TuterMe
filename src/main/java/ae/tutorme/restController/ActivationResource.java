@@ -20,7 +20,7 @@ import ae.tutorme.model.Activation;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping("/activation")
+@RequestMapping("/api/activation")
 public class ActivationResource {
 	
 	private static final Logger logger = Logger.getLogger(ActivationResource.class);

@@ -20,7 +20,7 @@ import ae.tutorme.model.Authorization;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping(value="/autorization")
+@RequestMapping(value="/api/autorization")
 public class AuthorizationResource {
 	
 	private static final Logger LOG = Logger.getLogger(Authorization.class);

@@ -21,7 +21,7 @@ import ae.tutorme.model.Response;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping("/response")
+@RequestMapping("/api/response")
 public class ResponseResource {
 	private static final Logger logger = Logger.getLogger(ResponseResource.class);
 	

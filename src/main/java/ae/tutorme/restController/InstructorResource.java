@@ -21,7 +21,7 @@ import ae.tutorme.model.User;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping("/instructor")
+@RequestMapping("/api/instructor")
 public class InstructorResource {
 	private static final Logger LOG = Logger.getLogger(InstructorResource.class);
 

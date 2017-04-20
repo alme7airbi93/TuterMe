@@ -21,7 +21,7 @@ import ae.tutorme.model.Rate;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping("/rate")
+@RequestMapping("/api/rate")
 public class RateResource {
 	private static final Logger logger = Logger.getLogger(RateResource.class);
 	

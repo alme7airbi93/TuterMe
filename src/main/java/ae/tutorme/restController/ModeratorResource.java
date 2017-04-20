@@ -20,7 +20,7 @@ import ae.tutorme.model.User;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping("/moderator")
+@RequestMapping("/api/moderator")
 public class ModeratorResource {
 	private static final Logger LOG = Logger.getLogger(ModeratorResource.class);
 

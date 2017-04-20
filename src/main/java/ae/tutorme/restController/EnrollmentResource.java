@@ -20,7 +20,7 @@ import ae.tutorme.model.Enrollment;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping("/enrollment")
+@RequestMapping("/api/enrollment")
 public class EnrollmentResource {
 private static final Logger logger = Logger.getLogger(EnrollmentResource.class);
 	

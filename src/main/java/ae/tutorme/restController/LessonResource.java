@@ -23,7 +23,7 @@ import ae.tutorme.utils.Helpers;
 import javax.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("/lesson")
+@RequestMapping("/api/lesson")
 public class LessonResource {
 	private static final Logger logger = Logger.getLogger(LessonResource.class);
 	

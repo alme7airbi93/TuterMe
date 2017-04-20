@@ -18,7 +18,7 @@ import ae.tutorme.model.Admin;
 import ae.tutorme.model.User;
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/api/admin")
 public class AdminResource {
 	
 	private static final Logger LOG = Logger.getLogger(AdminResource.class);

@@ -21,7 +21,7 @@ import ae.tutorme.model.Message;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping("/message")
+@RequestMapping("/api/message")
 public class MessageResource {
 private static final Logger logger = Logger.getLogger(MessageResource.class);
 	

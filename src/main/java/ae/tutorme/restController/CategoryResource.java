@@ -21,7 +21,7 @@ import ae.tutorme.model.Category;
 import ae.tutorme.utils.Helpers;
 
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/api/category")
 public class CategoryResource {
 	private static final Logger logger = Logger.getLogger(CategoryResource.class);
 	

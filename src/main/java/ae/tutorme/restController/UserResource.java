@@ -31,7 +31,7 @@ import ae.tutorme.utils.Helpers;
  */
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserResource {
 	
 	private static final Logger LOG = Logger.getLogger(UserResource.class.getName());
