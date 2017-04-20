@@ -2,107 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45fd61d6-96de-4dc3-9b67-92e2c0903be0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-aop-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-aspects-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-beans-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-context-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-context-support-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-core-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-expression-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-instrument-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-instrument-tomcat-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-jdbc-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-jms-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-messaging-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-orm-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-oxm-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-test-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-tx-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-web-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-webmvc-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-webmvc-portlet-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/spring-websocket-4.3.4.RELEASE.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/tutorme_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Spring_4_3_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Spring_MVC_4_3_4_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/ModeratorDAO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/ModeratorDAOImp.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/converter/Converter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/ActivationResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/AdminResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/AuthorizationResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/CategoryResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/CourseResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/EnrollmentResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/InstructorResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/LessonResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/MessageResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/ModeratorResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/RateResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/ResponseResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/StudentResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/TopicResource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/utils/Helpers.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tutorme.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/App01.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/App01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/CategoryMVC.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/CategoryMVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/CourseMVC.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/CourseMVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/EnrollmentMVC.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/EnrollmentMVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/HomeMVC.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/HomeMVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/StudentMVC.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/controller/StudentMVC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/ActivationDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/ActivationDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/AuthorizationDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/AuthorizationDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/CategoryDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/CategoryDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/CourseDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/CourseDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/EnrollmentDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/EnrollmentDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/InstructorDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/InstructorDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/LessonDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/LessonDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/MessageDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/MessageDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/RateDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/RateDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/ResponseDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/ResponseDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/StudentDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/StudentDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/TopicDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/TopicDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/ActivationDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/ActivationDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/AuthorizationDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/AuthorizationDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/CategoryDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/CategoryDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/CourseDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/CourseDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/EnrollmentDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/EnrollmentDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/InstructorDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/InstructorDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/LessonDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/LessonDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/MessageDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/MessageDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/RateDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/RateDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/ResponseDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/ResponseDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/StudentDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/StudentDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/TopicDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/TopicDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/UserDAOImp.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dao/imp/UserDAOImp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/ActivationDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/ActivationDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/AdminDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/AdminDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/AuthorizationDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/AuthorizationDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/CategoryDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/CategoryDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/CourseDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/CourseDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/EnrollmentDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/EnrollmentDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/InstructorDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/InstructorDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/LessonDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/LessonDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/MessageDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/MessageDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/ModeratorDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/ModeratorDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/RateDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/RateDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/ResponseDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/ResponseDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/StudentDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/StudentDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/TopicDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/TopicDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/UserDTO.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/dto/UserDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Activation.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Activation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Admin.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Admin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Authorization.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Authorization.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Category.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Course.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Course.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Enrollment.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Enrollment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Instructor.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Instructor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Lesson.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Lesson.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Message.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Message.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Moderator.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Moderator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Rate.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Rate.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Response.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Response.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Student.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Student.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Topic.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/Topic.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/User.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/UserResource.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/restController/UserResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/service/class1.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/service/class1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/service/imp/TutormeMailSender.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/service/imp/TutormeMailSender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ae/tutorme/utils/HashMD5.java" afterPath="$PROJECT_DIR$/src/main/java/ae/tutorme/utils/HashMD5.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcher-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/log4j.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/log4j.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/animate/animate.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/animate/animate.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/animate/set.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/animate/set.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/bootstrap/bootstrap.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/bootstrap/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/bootstrap/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/bootstrap/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/style.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/jquery.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/respond/respond.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/respond/respond.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/script.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/wow/wow.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/wow/wow.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/jwplayer/jwplayer.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/jwplayer/jwplayer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/jwplayer/provider.hlsjs.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/jwplayer/provider.hlsjs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/jwplayer/provider.shaka.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/jwplayer/provider.shaka.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.audio.playlist.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.audio.playlist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.audio.single.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.audio.single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.audio.stream.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.audio.stream.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.video.playlist.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.video.playlist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.video.single.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/mustache/jplayer.blue.monday.video.single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/scss/jplayer.blue.monday.scss" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/blue.monday/scss/jplayer.blue.monday.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/jplayer.pink.flag.scss" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/jplayer.pink.flag.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.audio.playlist.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.audio.playlist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.audio.single.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.audio.single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.audio.stream.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.audio.stream.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.video.playlist.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.video.playlist.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.video.single.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/skin/pink.flag/mustache/jplayer.pink.flag.video.single.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-security.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/Register.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/testJSP1.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/testJSP1.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="Final.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,9 +72,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="314">
               <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-              <folding>
-                <marker date="1491394495991" expanded="true" signature="3084:3090" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1231,7 +1171,7 @@
       <workItem from="1491156193974" duration="22000" />
       <workItem from="1491316390542" duration="42000" />
       <workItem from="1491394897693" duration="289000" />
-      <workItem from="1492680453849" duration="33000" />
+      <workItem from="1492680453849" duration="155000" />
     </task>
     <task id="LOCAL-00001" summary="Try this">
       <created>1487417001665</created>
@@ -1289,11 +1229,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490804966287</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="last">
+      <created>1492680541076</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1492680541076</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198783000" />
+    <option name="totallyTimeSpent" value="198905000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -1349,7 +1296,8 @@
     <MESSAGE value="Last Update" />
     <MESSAGE value="Update" />
     <MESSAGE value="database fixing" />
-    <option name="LAST_COMMIT_MESSAGE" value="database fixing" />
+    <MESSAGE value="last" />
+    <option name="LAST_COMMIT_MESSAGE" value="last" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1661,9 +1609,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="314">
           <caret line="50" column="13" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-          <folding>
-            <marker date="1491394495991" expanded="true" signature="3084:3090" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
