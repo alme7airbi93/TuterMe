@@ -1,5 +1,6 @@
 package ae.tutorme.dao;
 
+import ae.tutorme.dto.TopicDTO;
 import ae.tutorme.model.Topic;
 
 /**
@@ -7,10 +8,15 @@ import ae.tutorme.model.Topic;
  */
 public interface TopicDAO {
 
-    void saveTopic(Topic topic);
+    Topic saveTopic(Topic topic);
 
     void updateTopic(Topic topic);
 
+    Topic getById(int id);
+    
+    TopicDTO getTopicDTOById(int id);
 
-
+    TopicDTO updateTopic(int id, TopicDTO topic);
+    
+    void deleteTopic(int id);
 }

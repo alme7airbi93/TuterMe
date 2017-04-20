@@ -1,9 +1,13 @@
 package ae.tutorme.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import javax.persistence.*;
+
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.UUID;
 
 /**
  * Created by almehairbi on 2/17/17.
@@ -19,20 +23,27 @@ public class Activation
     @Column(name = "ID")
     private int id;
 
-
-
     @Column(name = "ACTIVATION_CODE")
     private String activationCode;
 
     @Column(name = "EXPIRY_DATE")
     private Date expiryDate;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @PrimaryKeyJoinColumn
+    @OneToOne(fetch = FetchType.LAZY, mappedBy="activation")
     @JsonIgnore
     private User user;
 
-    public Activation(String activationCode, Date expiryDate, User user) {
+
+
+    public Activation(int id, String activationCode, Date expiryDate, User user) {
+		super();
+		this.id = id;
+		this.activationCode = activationCode;
+		this.expiryDate = expiryDate;
+		this.user = user;
+	}
+
+	public Activation(String activationCode, Date expiryDate, User user) {
         this.activationCode = activationCode;
         this.expiryDate = expiryDate;
         this.user = user;
@@ -44,7 +55,9 @@ public class Activation
     }
 
     public Activation() {
-        this("", null);
+        this.expiryDate = new Date();
+        this.activationCode = UUID.randomUUID().toString();
+        this.user = null;
     }
 
     public Date getExpiryDate() {

@@ -31,9 +31,14 @@ public class Authorization
         this.role = role;
     }
 
+    public Authorization(int id, User user, String role) {
+		super();
+		this.id = id;
+		this.user = user;
+		this.role = role;
+	}
 
-
-    public Authorization() {
+	public Authorization() {
         this(null, "");
     }
 
@@ -50,6 +55,17 @@ public class Authorization
     }
 
     public void setUser(User user) {
+        if(user instanceof Instructor)
+        {
+            setRole("TEACHER");
+        }else if (user instanceof Admin)
+        {
+            setRole("ADMIN");
+        } else if (user instanceof Moderator) {
+            setRole("MODERATOR");
+        } else if (user instanceof Student) {
+            setRole("STUDENT");
+        }
         this.user = user;
     }
 

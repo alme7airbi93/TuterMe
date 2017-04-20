@@ -2,7 +2,7 @@ package ae.tutorme.dto;
 
 
 import ae.tutorme.model.Enrollment;
-import ae.tutorme.model.Rate;
+import ae.tutorme.model.Student;
 import ae.tutorme.model.User;
 
 import java.util.HashSet;
@@ -16,28 +16,40 @@ import java.util.Set;
 public class StudentDTO extends UserDTO
 {
 
-    private Set<Enrollment> enrollments = new HashSet<>(0);
+    private Set<EnrollmentDTO> enrollmentDTOs = new HashSet<>();
 
-    private Set<Rate> rates = new HashSet<>(0);
+    private Set<RateDTO> rates = new HashSet<>();
 
     public StudentDTO(User user) {
         super(user);
+        this.enrollmentDTOs = enrollmentConverter(((Student) user).getEnrollments());
+    }
+    
+    public StudentDTO() {
+		// TODO Auto-generated constructor stub
+	}
+
+    public Set<EnrollmentDTO> enrollmentConverter(Set<Enrollment> enrollments) {
+        Set<EnrollmentDTO> enrollmentDTOs = new HashSet<>(enrollments.size());
+        for (Enrollment e : enrollments) {
+            EnrollmentDTO enrollmentDTO = new EnrollmentDTO(e);
+            enrollmentDTOs.add(enrollmentDTO);
+        }
+        return enrollmentDTOs;
+    }
+    public Set<EnrollmentDTO> getEnrollmentDTOs() {
+        return enrollmentDTOs;
     }
 
-
-    public Set<Enrollment> getEnrollments() {
-        return enrollments;
+    public void setEnrollmentDTOs(Set<EnrollmentDTO> enrollmentDTOs) {
+        this.enrollmentDTOs = enrollmentDTOs;
     }
 
-    public void setEnrollments(Set<Enrollment> enrollments) {
-        this.enrollments = enrollments;
-    }
-
-    public Set<Rate> getRates() {
+    public Set<RateDTO> getRates() {
         return rates;
     }
 
-    public void setRates(Set<Rate> rates) {
+    public void setRates(Set<RateDTO> rates) {
         this.rates = rates;
     }
 

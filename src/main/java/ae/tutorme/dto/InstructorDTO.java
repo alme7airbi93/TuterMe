@@ -23,16 +23,19 @@ import java.util.Set;
 public class InstructorDTO extends UserDTO
 {
 
-    private Set<CourseDTO> courses ;
+    private Set<CourseDTO> courses = new HashSet<>();
 
+    public InstructorDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
     public InstructorDTO(User user) {
         super(user);
-        this.courses = converter(((Instructor) user).getCourses());
+        this.courses = courseConverter(((Instructor) user).getCourses());
     }
 
-    public Set<CourseDTO> converter(Set<Course> courses) {
-        Set<CourseDTO> coursesDTO = null;
+    public Set<CourseDTO> courseConverter(Set<Course> courses) {
+        Set<CourseDTO> coursesDTO = new HashSet<>();
         for (Course c : courses) {
             CourseDTO courseDTO = new CourseDTO(c);
             coursesDTO.add(courseDTO);

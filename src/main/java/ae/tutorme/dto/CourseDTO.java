@@ -26,18 +26,22 @@ public class CourseDTO implements Serializable {
     private String name;
     private boolean enabled;
     private double rating;
-    private Set<EnrollmentDTO> enrollments ;
-    private Set<TopicDTO> topics;
-    private Set<RateDTO> rates ;
+    private Set<EnrollmentDTO> enrollments = new HashSet<>();
+    private Set<TopicDTO> topics = new HashSet<>();
+    private Set<RateDTO> rates = new HashSet<>();
     private int categoryId;
+    
+    public CourseDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
 
     public CourseDTO(Course course) {
         this.courseId = course.getCourseId();
         this.description = course.getDescription();
-        this.categoryId = course.getCategory().getCategoryId();
-        this.instructorId = course.getInstructor().getUserId();
-        this.moderatorId = course.getModerator().getUserId();
+        this.categoryId = course.getCategory() != null ? course.getCategory().getCategoryId() : 0;
+        this.instructorId = course.getInstructor() != null ? course.getInstructor().getUserId() : 0;
+        this.moderatorId = course.getModerator() != null ? course.getModerator().getUserId() : 0;
         this.name = course.getName();
         this.price = course.getPrice();
         this.rating = course.getRating();
@@ -48,7 +52,7 @@ public class CourseDTO implements Serializable {
     }
 
     public Set<EnrollmentDTO> enroolmentConverter(Set<Enrollment> enrollments) {
-        Set<EnrollmentDTO> enrollmentDTOs = null;
+        Set<EnrollmentDTO> enrollmentDTOs = new HashSet<>();
         for (Enrollment e : enrollments) {
             EnrollmentDTO enrollmentDTO = new EnrollmentDTO(e);
             enrollmentDTOs.add(enrollmentDTO);
@@ -57,7 +61,7 @@ public class CourseDTO implements Serializable {
     }
 
     public Set<TopicDTO> topicConverter(Set<Topic> topics) {
-        Set<TopicDTO> topicDTOs = null;
+        Set<TopicDTO> topicDTOs =  new HashSet<>();
         for (Topic t : topics) {
             TopicDTO topicDTO = new TopicDTO(t);
             topicDTOs.add(topicDTO);
@@ -65,7 +69,7 @@ public class CourseDTO implements Serializable {
         return topicDTOs;
     }
     public Set<RateDTO> rateConverter(Set<Rate> rates) {
-        Set<RateDTO> rateDTOs = null;
+        Set<RateDTO> rateDTOs =  new HashSet<>();
         for (Rate r : rates) {
             RateDTO rateDTO = new RateDTO(r);
             rateDTOs.add(rateDTO);

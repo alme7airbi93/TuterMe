@@ -1,11 +1,15 @@
 package ae.tutorme.model;
 
-import org.hibernate.annotations.ForeignKey;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.ForeignKey;
 
 /**
  * Created by almehairbi on 2/17/17.
@@ -34,8 +38,13 @@ public class Instructor extends User
     public Instructor(String userName, String password, boolean enabled, Activation activation, Authorization authorization) {
         super(userName, password, enabled, activation, authorization);
     }
+    
+	public Instructor(int userId, String userName, String password, boolean enabled, String name, Activation activation, Authorization authorization, Set<Message> messages, Set<Course> courses) {
+		super(userId, userName, password, enabled, name, activation, authorization, messages);
+		this.courses = courses;
+	}
 
-    public Set<Course> getCourses() {
+	public Set<Course> getCourses() {
         return courses;
     }
 

@@ -15,18 +15,21 @@ import java.util.Set;
 public class ModeratorDTO extends UserDTO
 {
 
-    private Set<CourseDTO> courses;
+    private Set<CourseDTO> courses = new HashSet<>();
 
+    
+    public ModeratorDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
 
     public ModeratorDTO(User user) {
         super(user);
-        Moderator m = (Moderator) user;
-        this.courses = converter(m.getCourses());
+        this.courses = courseConverter(((Moderator)user).getCourses());
     }
 
-    public Set<CourseDTO> converter(Set<Course> courses) {
-        Set<CourseDTO> coursesDTO = null;
+    public Set<CourseDTO> courseConverter(Set<Course> courses) {
+        Set<CourseDTO> coursesDTO = new HashSet<>();
         for (Course c : courses) {
             CourseDTO courseDTO = new CourseDTO(c);
             coursesDTO.add(courseDTO);

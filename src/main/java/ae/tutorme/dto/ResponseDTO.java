@@ -17,17 +17,21 @@ public class ResponseDTO implements Serializable {
     private int id;
     private int courseId;
     private int userId;
-    private Set<ResponseDTO> responses ;
+    private Set<ResponseDTO> responses = new HashSet<>();
     private int responseId;
     private String text;
+    
+    public ResponseDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
 
     public ResponseDTO(Response response) {
         this.id = response.getId();
-        this.courseId = response.getCourse().getCourseId();
-        this.responseId = response.getResponse().getId();
+        this.courseId = response.getCourse() != null ? response.getCourse().getCourseId() : 0;
+        this.responseId = response.getResponse() != null ? response.getResponse().getId() : 0;
         this.text = response.getText();
-        this.userId = response.getUser().getUserId();
+        this.userId = response.getUser() != null ? response.getUser().getUserId() : 0;
         this.responses = converter(response.getResponses());
     }
 
