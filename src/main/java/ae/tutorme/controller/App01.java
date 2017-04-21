@@ -32,19 +32,9 @@ public class App01 {
     @RequestMapping(value = "/")
     public String addUser(Model model) {
 
-//        User instructor = new Instructor();
-//        instructor.setUserName("Ali");
-//        instructor.setPassword("Ali");
-//        Activation activation = new Activation();
-//        activation.setactivationCode("12");
-//        activation.setUser(instructor);
-//        activation.setExpiryDate(new Date());
-//        instructor.setActivation(activation);
-//        Authorization authorization = new Authorization();
-//        authorization.setRole("Teacher");
-//        authorization.setUser(instructor);
-//        instructor.setAuthorization(authorization);
-//        userDAO.saveUser(instructor);
+        String filePath = HashMD5.getHashPath("bbb.mp4");
+        model.addAttribute("url",filePath);
+
         return "testJSP1";
     }
 
