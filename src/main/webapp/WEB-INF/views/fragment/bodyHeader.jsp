@@ -105,7 +105,8 @@
                             <li ><a href="#contact" data-toggle="modal" data-target="#myModal" >Log In</a></li>
                         </c:if>
                         <c:if test="${user != null}" >
-                            <li ><a href="#logout" data-toggle="modal" data-target="#myModal" >Logout</a></li>
+                            <c:url var="logout" value="/j_spring_security_logout"/>
+                            <li ><a href="${logout}"  >Logout</a></li>
                         </c:if>
                     </ul>
                 </div>
@@ -142,71 +143,74 @@
 
                         <div class="tab-content">
                             <div class="tab-pane active" id="Login">
-                                <c:url value="/login" var="urlLogin"/>
-                                <form:form role="form" class="form-horizontal">
-                                    <div class="form-group">
-                                        <label for="email1" class="col-sm-3 control-label">
-                                            Email</label>
-                                        <div class="col-sm-9">
-                                            <input type="email" class="form-control" id="email1" placeholder="Email" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputPassword1" class="col-sm-3 control-label">
-                                            Password</label>
-                                        <div class="col-sm-9">
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <button type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px">
-                                                Submit</button>
-                                            <a href="javascript:;">Forgot your password?</a>
-                                        </div>
-                                    </div>
-                                </form:form>
-                            </div>
-                            <div class="tab-pane" id="Registration">
-                                <c:url var="regUrl" value="/register"/>
-                                <form:form role="form" class="form-horizontal" action="${regUrl}" method="post" commandName="student" enctype="multipart/form-data">
-                                    <div class="form-group">
-                                        <label for="name" class="col-sm-3 control-label">
-                                            Full Name</label>
-                                        <div class="col-sm-9">
-                                            <form:input path="name"  type="text" class="form-control" id="name" placeholder="Full Name" />
-                                        </div>
-                                    </div>
+                                <c:url value="/login" var="login"/>
+                                <form action="${login}"  class="form-horizontal" method="post">
                                     <div class="form-group">
                                         <label for="userName" class="col-sm-3 control-label">
                                             Email</label>
                                         <div class="col-sm-9">
-                                            <form:input path="userName" type="email" class="form-control" id="userName" placeholder="Email" />
+                                            <input   class="form-control" name="username" id="userName" placeholder="Email" />
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="password" class="col-sm-3 control-label">
                                             Password</label>
                                         <div class="col-sm-9">
-                                            <form:password path="password" class="form-control" id="password" placeholder="Password" />
+                                            <input type="password"  name="password"  class="form-control" id="password" placeholder="Password" />
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-3">
                                         </div>
                                         <div class="col-sm-5">
-                                            <input type="submit" class="btn btn-primary btn-sm">
-                                                Submit</input>
-                                        </div>
-                                        <div class="col-sm-2">
-                                            <button type="button" class="btn btn-default btn-sm">
-                                                Cancel</button>
+                                            <input type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px"/>
+                                            <a href="javascript:;">Forgot your password?</a>
                                         </div>
                                     </div>
-                                </form:form>
+                                </form>
                             </div>
+                            <c:if test="${user == null}">
+                                <div class="tab-pane" id="Registration">
+                                    <c:url var="regUrl" value="/register"/>
+
+                                    <form:form role="form" class="form-horizontal" action="${regUrl}" method="post" commandName="guest" >
+                                        <div class="form-group">
+                                            <label for="name" class="col-sm-3 control-label">
+                                                Full Name</label>
+                                            <div class="col-sm-9">
+                                                <form:input path="name"  type="text" class="form-control" id="name" placeholder="Full Name" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="userName" class="col-sm-3 control-label">
+                                                Email</label>
+                                            <div class="col-sm-9">
+                                                <form:input path="userName" type="email" class="form-control" id="userName" placeholder="Email" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password" class="col-sm-3 control-label">
+                                                Password</label>
+                                            <div class="col-sm-9">
+                                                <form:password path="password" class="form-control" id="password" placeholder="Password" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <input type="submit" class="btn btn-primary btn-sm">
+                                                Submit</input>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <button type="button" class="btn btn-default btn-sm">
+                                                    Cancel</button>
+                                            </div>
+                                        </div>
+                                    </form:form>
+                                </div>
+                            </c:if>
+
                         </div>
                     </div>
                 </div>
