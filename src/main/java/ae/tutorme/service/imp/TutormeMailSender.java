@@ -1,5 +1,6 @@
 package ae.tutorme.service.imp;
 
+import ae.tutorme.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailSender;
 import org.springframework.mail.SimpleMailMessage;
@@ -19,12 +20,18 @@ public class TutormeMailSender {
 
     public void sendMail(String toAddress, String fromAddress, String subject, String msgBody) {
 
-        SimpleMailMessage crunchifyMsg = new SimpleMailMessage();
-        crunchifyMsg.setFrom(fromAddress);
-        crunchifyMsg.setTo(toAddress);
-        crunchifyMsg.setSubject(subject);
-        crunchifyMsg.setText(msgBody);
-        mailSender.send(crunchifyMsg);
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+       // simpleMailMessage.setFrom(fromAddress);
+        simpleMailMessage.setTo(toAddress);
+        simpleMailMessage.setSubject(subject);
+        simpleMailMessage.setText(msgBody);
+        mailSender.send(simpleMailMessage);
+    }
+
+    public void sendVirfication(User user) {
+
+        String link = "www.tutorme.ae/virfication/" + user.getActivation().getactivationCode() + user.getUserName();
+        sendMail(user.getUserName(),"admin@tutorme.ae","Tutorme-Virfication",link);
     }
 
 

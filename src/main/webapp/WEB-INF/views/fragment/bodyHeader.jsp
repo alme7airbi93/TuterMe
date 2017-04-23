@@ -151,7 +151,7 @@
                                         <label for="userName" class="col-sm-3 control-label">
                                             Email</label>
                                         <div class="col-sm-9">
-                                            <input   class="form-control" name="username" id="userName" placeholder="Email" />
+                                            <input type="email"  class="form-control" name="username" id="userName" placeholder="Email" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -172,6 +172,7 @@
                                 </form>
                             </div>
                             <c:if test="${user == null}">
+                            <c:if test="${guest != null}">
                                 <div class="tab-pane" id="Registration">
                                     <c:url var="regUrl" value="/register"/>
 
@@ -201,8 +202,7 @@
                                             <div class="col-sm-3">
                                             </div>
                                             <div class="col-sm-5">
-                                                <input type="submit" class="btn btn-primary btn-sm">
-                                                Submit</input>
+                                                <input type="submit" class="btn btn-primary btn-sm"/>
                                             </div>
                                             <div class="col-sm-2">
                                                 <button type="button" class="btn btn-default btn-sm">
@@ -211,6 +211,7 @@
                                         </div>
                                     </form:form>
                                 </div>
+                            </c:if>
                             </c:if>
 
                         </div>

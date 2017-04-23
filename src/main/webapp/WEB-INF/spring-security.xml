@@ -24,19 +24,39 @@
                     default-target-url="/home"
                     authentication-failure-url="/login?auth=fail" />
 
-        <logout logout-url="/logout" logout-success-url="/logout" />
+        <!--authentication-failure-handler-ref="customFailureHandler" -->
 
-        <csrf disabled="true"/>
-    </http>
+       <logout logout-url="/logout" logout-success-url="/logout" />
 
-    <authentication-manager>
-        <authentication-provider>
-            <!--<password-encoder hash="md5" />-->
+       <csrf disabled="true"/>
+   </http>
+
+
+   <authentication-manager>
+       <authentication-provider>
+           <!--<password-encoder hash="md5" />-->
             <!-- if not working add datasource up there -->
             <jdbc-user-service data-source-ref="dataSource"
                                users-by-username-query="select USERNAME, PASSWORD, ENABLED from USER where username = ?"
                                authorities-by-username-query="select USERNAME, ROLE from AUTHORIZATION where username =? " />
         </authentication-provider>
     </authentication-manager>
+
+
+    <!--<beans:bean id="customFailureHandler"-->
+                <!--class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">-->
+        <!--<beans:property name="exceptionMappings">-->
+            <!--<beans:props>-->
+                <!--<beans:prop-->
+                        <!--key="org.springframework.security.authentication.BadCredentialsException">/login/fail/cred</beans:prop>-->
+                <!--<beans:prop-->
+                        <!--key="org.springframework.security.authentication.AuthenticationServiceException">/login/fail/error</beans:prop>-->
+                <!--<beans:prop key="org.springframework.secuirty.authentication.DisabledException">/login/fail/dis</beans:prop>-->
+            <!--</beans:props>-->
+        <!--</beans:property>-->
+        <!--<beans:property name="defaultFailureUrl" value="/login/fail/def" />-->
+    <!--</beans:bean>-->
+
+
 
 </beans:beans>

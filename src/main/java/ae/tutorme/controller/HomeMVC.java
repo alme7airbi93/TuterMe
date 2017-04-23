@@ -1,14 +1,13 @@
 package ae.tutorme.controller;
 
 import ae.tutorme.dao.UserDAO;
-import ae.tutorme.model.Activation;
-import ae.tutorme.model.Authorization;
-import ae.tutorme.model.Student;
-import ae.tutorme.model.User;
+import ae.tutorme.model.*;
+import ae.tutorme.service.imp.TutormeMailSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,8 +23,11 @@ public class HomeMVC {
     @Autowired
     private UserDAO userDAO;
 
+    @Autowired
+    private TutormeMailSender tutormeMailSender;
+
     @RequestMapping("/")
-    public String home(Model model,HttpSession session) {
+    public String home(Model model, HttpSession session) {
         if (session.getAttribute("user") == null) {
             Student student = new Student();
             model.addAttribute("guest", student);
@@ -35,27 +37,22 @@ public class HomeMVC {
 
 
     @RequestMapping("/home")
-    public String home(Principal principal,HttpSession session)
-    {
+    public String home(Principal principal, HttpSession session) {
         String userName = principal.getName();
         User user = userDAO.getUserBuUserName(userName);
-        session.setAttribute("user",user);
-
+        session.setAttribute("user", user);
         return "index";
     }
 
     @RequestMapping("/categories")
-    public String categories(Model model)
-    {
+    public String categories(Model model) {
 
         return "categories";
     }
 
 
-
-    @RequestMapping(value = "/register",method = RequestMethod.POST)
-    public String reg(@ModelAttribute("student") Student student,HttpSession session)
-    {
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String reg(@ModelAttribute("student") Student student) {
         Activation activation = new Activation();
         activation.setUser(student);
         Authorization authorization = new Authorization();
@@ -63,18 +60,8 @@ public class HomeMVC {
         student.setActivation(activation);
         student.setAuthorization(authorization);
         userDAO.saveUser(student);
-        session.setAttribute("user",student);
-        return "index";
+        tutormeMailSender.sendVirfication(student);
+        return "vertification";
     }
 
-    @RequestMapping("/loginPage")
-    public String login(Principal principal, HttpSession session)
-    {
-
-        String userName = principal.getName();
-        User user = userDAO.getUserBuUserName(userName);
-        session.setAttribute("user",user);
-        System.out.print("hi");
-        return "index";
-    }
 }
