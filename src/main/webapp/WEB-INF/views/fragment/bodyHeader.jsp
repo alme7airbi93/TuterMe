@@ -104,6 +104,9 @@
                         <c:if test="${user == null}" >
                             <li ><a href="#contact" data-toggle="modal" data-target="#myModal" >Log In</a></li>
                         </c:if>
+                        <c:if test="${user != null}" >
+                            <li ><a href="#logout" data-toggle="modal" data-target="#myModal" >Logout</a></li>
+                        </c:if>
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
