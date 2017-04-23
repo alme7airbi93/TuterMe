@@ -32,6 +32,13 @@ public class HomeMVC {
         return "index";
     }
 
+    @RequestMapping("/categories")
+    public String categories(Model model)
+    {
+
+        return "categories";
+    }
+
 
 
     @RequestMapping(value = "/register",method = RequestMethod.POST)

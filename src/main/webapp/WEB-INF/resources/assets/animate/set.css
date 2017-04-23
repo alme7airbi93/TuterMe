@@ -2,7 +2,7 @@
 	position: relative;
 	margin: 0 auto;
 	margin-left:30px;
-	margin-bottom:25px
+	margin-bottom:25px;
 	list-style: none;
 	text-align: center;
 	width:auto;
@@ -17,9 +17,10 @@
 	float: left;
 	overflow: hidden;
 	width:270px;
+	height: 200px;
 	text-align: center;
 	cursor: pointer;
-	border:black 2px thick;
+
 	border-radius:5px;
 }
 
@@ -27,6 +28,7 @@
 
 	position: relative;
 	display: block;
+	height: 102%;
 	max-width: 102%;
 	opacity: 1;
 }
@@ -1147,4 +1149,35 @@ figure.effect-chico:hover p {
 
 @media (max-width: 639px) {
 	.grid figure {width: 100%;}
+}
+
+
+.black-text
+{
+
+
+
+	padding: 2em;
+
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 10px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+}
+
+/*---------------*/
+/***** Chico *****/
+/*---------------*/
+
+
+.black-text
+{
+
+
+
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
+
 }

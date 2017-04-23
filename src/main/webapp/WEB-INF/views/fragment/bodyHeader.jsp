@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<div class="topbar animated fadeInLeftBig"></div>
 
 <div class="navbar-wrapper">
     <div class="container">
@@ -58,42 +59,42 @@
                                     </li>
                                     <li class="col-sm-3">
                                         <ul>
-                                            <li class="dropdown-header"><img src="<c:url value="/resources/images/glyphicons/glyphicons-534-lab.png"/>"/> Chemistry</li>
-                                            <li><a href="#">Example 1</a></li>
-                                            <li><a href="#">Example 2</a></li>
-                                            <li><a href="#">Example 3</a></li>
-                                            <li><a href="#">Example 4</a></li>
-                                            <li><a href="#">Example 5</a></li>
+                                            <li class="dropdown-header"><img src="<c:url value="/resources/images/glyphicons/glyphicons-595-stethoscope.png"/>"/> Health & Nutrition</li>
+                                            <li><a href="#">Nutrition</a></li>
+                                            <li><a href="#">Health</a></li>
                                             <li class="divider"></li>
-                                            <li class="dropdown-header">Button dropdowns</li>
-                                            <li><a href="#">Single button dropdowns</a></li>
+                                            <li class="dropdown-header"><img src="<c:url value="/resources/images/glyphicons/glyphicons-43-pie-chart.png"/>"/> Business & Finance</li>
+                                            <li><a href="#">Business</a></li>
+                                            <li><a href="#">Finance</a></li>
+                                            <li><a href="#">Accounting</a></li>
+                                            <li><a href="#">Logistics</a></li>
                                         </ul>
                                     </li>
                                     <li class="col-sm-3">
                                         <ul>
-                                            <li class="dropdown-header">Input groups</li>
-                                            <li><a href="#">Basic example</a></li>
-                                            <li><a href="#">Sizing</a></li>
-                                            <li><a href="#">Checkboxes and radio addons</a></li>
+                                            <li class="dropdown-header"><img src="<c:url value="/resources/images/glyphicons/glyphicons-72-book.png"/>"/>Langauges</li>
+                                            <li><a href="#">Arabic</a></li>
+                                            <li><a href="#">English</a></li>
+                                            <li><a href="#">Japanese</a></li>
                                             <li class="divider"></li>
-                                            <li class="dropdown-header">Navs</li>
-                                            <li><a href="#">Tabs</a></li>
-                                            <li><a href="#">Pills</a></li>
-                                            <li><a href="#">Justified</a></li>
+                                            <li class="dropdown-header"><img src="<c:url value="/resources/images/glyphicons/glyphicons-65-lightbulb.png"/>"/>Physics</li>
+                                            <li><a href="#">Thermodynamics</a></li>
+                                            <li><a href="#">Mechanical</a></li>
+                                            <li><a href="#">Electricity and magnetism</a></li>
                                         </ul>
                                     </li>
                                     <li class="col-sm-3">
                                         <ul>
-                                            <li class="dropdown-header">Navbar</li>
-                                            <li><a href="#">Default navbar</a></li>
-                                            <li><a href="#">Buttons</a></li>
-                                            <li><a href="#">Text</a></li>
-                                            <li><a href="#">Non-nav links</a></li>
-                                            <li><a href="#">Component alignment</a></li>
-                                            <li><a href="#">Fixed to top</a></li>
-                                            <li><a href="#">Fixed to bottom</a></li>
-                                            <li><a href="#">Static top</a></li>
-                                            <li><a href="#">Inverted navbar</a></li>
+                                            <li class="dropdown-header"><img src="<c:url value="/resources/images/glyphicons/glyphicons-371-globe-af.png"/>"/>Geography & history</li>
+                                            <li><a href="#">History</a></li>
+                                            <li><a href="#">Geography</a></li>
+                                            <li><a href="#">Ecology</a></li>
+                                            <li class="divider"></li>
+                                            <li class="dropdown-header"><img src="<c:url value="/resources/images/glyphicons/glyphicons-12-camera.png"/>"/>Media</li>
+                                            <li><a href="#">Photography</a></li>
+                                            <li><a href="#">Photoshop</a></li>
+                                            <li><a href="#">Video editing</a></li>
+                                            <li><a href="#">Cinematology</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -126,7 +127,8 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    ×</button>
+                    <img src="<c:url value="/resources/images/glyphicons/glyphicons-198-remove-circle.png"/>"/>
+                </button>
                 <h4 class="modal-title" id="myModalLabel">
                     Login/Registration</h4>
             </div>
