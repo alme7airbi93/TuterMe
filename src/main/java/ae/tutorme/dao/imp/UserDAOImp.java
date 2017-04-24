@@ -64,12 +64,16 @@ public class UserDAOImp implements UserDAO{
         User user = null;
         Session session = sessionFactory.getCurrentSession();
         String querry = "from ae.tutorme.model.User U where U.userName = '" + userName+"'";
+
         Query query = session.createQuery(querry);
         List<User> users = query.list();
         if(users.size() > 0 && users.size() < 2)
         {
-            user = users.get(0);
-        }
+
+			user = users.get(0);
+			System.out.println("hi "+user.getName());
+
+		}
         return user;
     }
 

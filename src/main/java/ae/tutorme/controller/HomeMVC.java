@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
+import java.security.Principal;
 
 /**
  * Created by Ali AL-Zaabi on 2/17/2017.
@@ -24,11 +25,22 @@ public class HomeMVC {
     private UserDAO userDAO;
 
     @RequestMapping("/")
-    public String home(Model model)
+    public String home(Model model,HttpSession session) {
+        if (session.getAttribute("user") == null) {
+            Student student = new Student();
+            model.addAttribute("guest", student);
+        }
+        return "index";
+    }
+
+
+    @RequestMapping("/home")
+    public String home(Principal principal,HttpSession session)
     {
-        Student student = new Student();
-        student.setUserName("Guest");
-        model.addAttribute("student",student);
+        String userName = principal.getName();
+        User user = userDAO.getUserBuUserName(userName);
+        session.setAttribute("user",user);
+
         return "index";
     }
 
@@ -51,16 +63,18 @@ public class HomeMVC {
         student.setActivation(activation);
         student.setAuthorization(authorization);
         userDAO.saveUser(student);
-
         session.setAttribute("user",student);
         return "index";
     }
 
-    @RequestMapping("/login")
-    public String login(@ModelAttribute("student")User student, HttpSession session)
+    @RequestMapping("/loginPage")
+    public String login(Principal principal, HttpSession session)
     {
-        userDAO.saveUser(student);
-        session.setAttribute("student",student);
+
+        String userName = principal.getName();
+        User user = userDAO.getUserBuUserName(userName);
+        session.setAttribute("user",user);
+        System.out.print("hi");
         return "index";
     }
 }
