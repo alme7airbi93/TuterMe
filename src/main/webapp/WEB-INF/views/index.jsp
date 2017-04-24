@@ -108,9 +108,9 @@ This is the fragment we have the problem with
             </figcaption>
         </figure>
         <figure class="effect-oscar  wowload fadeInUp">
-            <img src="<c:url value="/resources/images/categories/technology.jpeg"/>" alt="img01"/>
+            <img src="<c:url value="/resources/images/categories/geography.jpeg"/>" alt="img01"/>
             <figcaption>
-                <h2>Chinese</h2>
+                <h2>Geography</h2>
                 <p>  <a href="images/portfolio/7.jpg" title="1" data-gallery>View more</a></p>
             </figcaption>
         </figure>
