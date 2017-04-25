@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -50,6 +49,14 @@ public class HomeMVC {
     public String categories(Model model) {
 
         return "categories";
+    }
+
+    @RequestMapping("/instructor/createcourse")
+    public String createCourse(Model model) {
+
+        Course course = new Course();
+        model.addAttribute("savecourse",course);
+        return "createcourse";
     }
 
 

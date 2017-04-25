@@ -12,7 +12,6 @@
 <body>
 <%@include file="fragment/bodyHeader.jsp"%>
 
-This is the fragment we have the problem with
 
 
 
