@@ -112,6 +112,10 @@
 
                             <li > <a href="<c:url value="/logout"/>" >Logout</a></li>
                         </c:if>
+                        <c:if test="${user instan}" >
+
+                            <li > <a href="<c:url value="/logout"/>" >Logout</a></li>
+                        </c:if>
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
@@ -252,9 +256,9 @@
                             <c:if test="${user == null}">
                                 <c:if test="${guest != null}">
                                     <div class="tab-pane" id="Registration">
-                                        <c:url var="regUrl" value="/register"/>
+                                        <c:url var="regUrl" value="/instructor/register"/>
 
-                                        <form:form role="form" class="form-horizontal" action="${regUrl}" method="post" commandName="guest" >
+                                        <form:form role="form" class="form-horizontal" action="${regUrl}" method="post" commandName="instructor" >
                                             <div class="form-group">
                                                 <label for="name" class="col-sm-3 control-label">
                                                     Full Name</label>

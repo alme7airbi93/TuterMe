@@ -30,7 +30,9 @@ public class HomeMVC {
     public String home(Model model, HttpSession session) {
         if (session.getAttribute("user") == null) {
             Student student = new Student();
+            Instructor instructor = new Instructor();
             model.addAttribute("guest", student);
+            model.addAttribute("instructor", student);
         }
         return "index";
     }
@@ -52,16 +54,28 @@ public class HomeMVC {
 
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String reg(@ModelAttribute("student") Student student) {
-        Activation activation = new Activation();
-        activation.setUser(student);
-        Authorization authorization = new Authorization();
-        authorization.setUser(student);
-        student.setActivation(activation);
-        student.setAuthorization(authorization);
-        userDAO.saveUser(student);
-        tutormeMailSender.sendVirfication(student);
+    public String studentReg(@ModelAttribute("student") Student student) {
+        createUser(student);
         return "vertification";
+    }
+
+    @RequestMapping(value = "/instructor/register", method = RequestMethod.POST)
+    public String instructorReg(@ModelAttribute("instructor") Instructor instructor) {
+        createUser(instructor);
+        return "vertification";
+    }
+
+    public User createUser(User user) {
+        Activation activation = new Activation();
+        activation.setUser(user);
+        Authorization authorization = new Authorization();
+        authorization.setUser(user);
+        user.setActivation(activation);
+        user.setAuthorization(authorization);
+        userDAO.saveUser(user);
+        tutormeMailSender.sendVirfication(user);
+        return user;
+
     }
 
 }

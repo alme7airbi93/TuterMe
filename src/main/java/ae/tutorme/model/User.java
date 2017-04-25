@@ -21,7 +21,8 @@ public abstract class User implements Serializable
     @Column(name = "USER_ID")
     private int userId;
 
-    @Column(name = "USERNAME")
+
+    @Column(name = "USERNAME",unique = true)
     private String userName;
 
     @Column(name = "PASSWORD")
