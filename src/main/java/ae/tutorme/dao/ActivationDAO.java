@@ -17,4 +17,6 @@ public interface ActivationDAO {
     void deleteActivation(int id);
     
     Activation getById(int id);
+
+    Activation getByUUID(String uuid);
 }

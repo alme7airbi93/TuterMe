@@ -22,15 +22,21 @@
                     username-parameter="username"
                     password-parameter="password"
                     default-target-url="/home"
-                    authentication-failure-url="/login?auth=fail" />
+                    authentication-failure-handler-ref="customFailureHandler"
+                     />
 
-        <!--authentication-failure-handler-ref="customFailureHandler" -->
+        <!-- authentication-failure-url="/login?auth=fail"  -->
 
-       <logout logout-url="/logout" logout-success-url="/logout" />
+        <logout
+                logout-url="/logout"
+                invalidate-session="true"
+                delete-cookies="true"
+                logout-success-url="/" />
 
        <csrf disabled="true"/>
    </http>
 
+    <!-- logout-url="/j_logout" -->
 
    <authentication-manager>
        <authentication-provider>
@@ -43,19 +49,20 @@
     </authentication-manager>
 
 
-    <!--<beans:bean id="customFailureHandler"-->
-                <!--class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">-->
-        <!--<beans:property name="exceptionMappings">-->
-            <!--<beans:props>-->
-                <!--<beans:prop-->
-                        <!--key="org.springframework.security.authentication.BadCredentialsException">/login/fail/cred</beans:prop>-->
-                <!--<beans:prop-->
-                        <!--key="org.springframework.security.authentication.AuthenticationServiceException">/login/fail/error</beans:prop>-->
-                <!--<beans:prop key="org.springframework.secuirty.authentication.DisabledException">/login/fail/dis</beans:prop>-->
-            <!--</beans:props>-->
-        <!--</beans:property>-->
-        <!--<beans:property name="defaultFailureUrl" value="/login/fail/def" />-->
-    <!--</beans:bean>-->
+    <beans:bean id="customFailureHandler"
+                class="org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler">
+        <beans:property name="exceptionMappings">
+            <beans:props>
+                <beans:prop
+                        key="org.springframework.security.authentication.BadCredentialsException">/login/fail/cred</beans:prop>
+                <beans:prop
+                        key="org.springframework.security.authentication.AuthenticationServiceException">/login/fail/500</beans:prop>
+                <beans:prop
+                        key="org.springframework.secuirty.authentication.DisabledException">/login/fail/dis</beans:prop>
+            </beans:props>
+        </beans:property>
+        <beans:property name="defaultFailureUrl" value="/login/fail/dis" />
+    </beans:bean>
 
 
 

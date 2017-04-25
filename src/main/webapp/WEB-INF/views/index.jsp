@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -59,6 +60,7 @@ This is the fragment we have the problem with
     </div>
 </div>
 
+
 <!-- SLIDESHOW SECTION END-->
 
 <!-- works -->
@@ -66,9 +68,9 @@ This is the fragment we have the problem with
     <div id="works"  class=" clearfix grid" style="rgba(255,255,255,0.8)">
         <figure class="effect-oscar  wowload fadeInLeft">
             <img src="<c:url value="/resources/images/categories/programming.jpeg"/>" alt="img01"/>
+            <p>  <a href="<c:url value="/logout"/>" title="1" data-gallery>View more</a></p>
             <figcaption>
                 <h2>Programming</h2>
-                <p>  <a href="images/portfolio/1.jpg" title="1" data-gallery>View more</a></p>
             </figcaption>
         </figure>
         <figure class="effect-oscar  wowload fadeInDown">

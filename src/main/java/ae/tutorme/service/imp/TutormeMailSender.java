@@ -21,7 +21,7 @@ public class TutormeMailSender {
     public void sendMail(String toAddress, String fromAddress, String subject, String msgBody) {
 
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-       // simpleMailMessage.setFrom(fromAddress);
+        simpleMailMessage.setFrom(fromAddress);
         simpleMailMessage.setTo(toAddress);
         simpleMailMessage.setSubject(subject);
         simpleMailMessage.setText(msgBody);
@@ -30,7 +30,7 @@ public class TutormeMailSender {
 
     public void sendVirfication(User user) {
 
-        String link = "www.tutorme.ae/virfication/" + user.getActivation().getactivationCode() + user.getUserName();
+        String link = "www.tutorme.ae/virfication/" + user.getActivation().getactivationCode();
         sendMail(user.getUserName(),"admin@tutorme.ae","Tutorme-Virfication",link);
     }
 

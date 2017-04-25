@@ -16,9 +16,8 @@ This is the fragment we have the problem with
 
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
-    <c:url value="/home" var="home"/>
 
-    <div class="head-line"><p>Please check the E-mail you registered with, as a vertification E-mail has been sent, <a href="${home}">click here to login</a></p></div>
+    <div class="head-line"><p>Please check the E-mail you registered with, as a vertification E-mail has been sent, <a href="<c:url value="/" />">click here to login</a></p></div>
 
 </div>
 <!-- works -->

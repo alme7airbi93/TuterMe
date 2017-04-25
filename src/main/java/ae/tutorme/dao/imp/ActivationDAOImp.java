@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by almehairbi on 2/25/17.
  */
@@ -57,7 +59,24 @@ public class ActivationDAOImp implements ActivationDAO {
         query.executeUpdate();
 	}
 
-	@Override
+    @Override
+    public Activation getByUUID(String uuid) {
+        Activation activation = null;
+        Session session = sessionFactory.getCurrentSession();
+        String querry = "from ae.tutorme.model.Activation A where A.activationCode = '" + uuid + "'";
+
+        Query query = session.createQuery(querry);
+        List<Activation> activationList = query.list();
+        if (activationList.size() > 0 && activationList.size() < 2) {
+
+            activation = activationList.get(0);
+            System.out.println("hi " + activation.getactivationCode());
+
+        }
+        return activation;
+    }
+
+    @Override
 	public Activation getById(int id) {
 		return (Activation) sessionFactory.getCurrentSession().get(Activation.class, id);
 	}
