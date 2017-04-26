@@ -38,10 +38,7 @@
                 delete-cookies="true"
                 logout-success-url="/" />
 
-        <!--<remember-me-->
-                <!--token-validity-seconds="1209600"-->
-                <!--remember-me-parameter="remember-me"-->
-                <!--data-source-ref="dataSource" />-->
+        <remember-me key="uniqueAndSecret" token-validity-seconds="86400"/>
 
        <csrf disabled="true"/>
    </http>

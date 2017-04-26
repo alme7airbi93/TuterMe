@@ -204,12 +204,18 @@
                                                    placeholder="Password"/>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="rememberMe" class="col-sm-3 control-label">
+                                            Remember me :</label>
+                                        <div class="col-sm-9">
+                                            <input id="rememberMe" type="checkbox" name="remember-me" />
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-sm-3">
                                         </div>
                                         <div class="col-sm-5">
-                                            <input type="submit" class="btn btn-primary btn-sm"
-                                                   style="margin-bottom: 5px"/>
+                                            <input type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px"/>
                                             <a href="javascript:;">Forgot your password?</a>
                                         </div>
                                     </div>

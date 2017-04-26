@@ -25,7 +25,7 @@
 
     <c:url var="adCourse" value="/course/savecourse"/>
 
-    <form:form role="form" class="form-horizontal" action="${adCourse}" method="post" commandName="Course" >
+    <form:form role="form" class="form-horizontal" action="${adCourse}" method="post" commandName="Course" enctype="multipart/form-data" >
         <h1>Course information: </h1>
         <div class="form-group">
             <div class="col-sm-9">
