@@ -19,7 +19,7 @@ public class Topic implements Serializable {
     @Column(name = "TOPIC_ID")
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @PrimaryKeyJoinColumn
     private Course course;
 
@@ -29,7 +29,7 @@ public class Topic implements Serializable {
     @Column(name = "TOPIC_NUMBER")
     private int topicNumber;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY,mappedBy = "topic")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER,mappedBy = "topic")
     private Set<Lesson> lessons = new HashSet<>(0);
     
     public Topic(int id, Course course, String topicName, int topicNumber, Set<Lesson> lessons) {

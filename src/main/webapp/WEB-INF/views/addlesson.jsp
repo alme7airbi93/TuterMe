@@ -1,3 +1,4 @@
+<%@ page import="ae.tutorme.model.Lesson" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -12,13 +13,26 @@
 <%@include file="fragment/bodyHeader.jsp"%>
 
 
+<% Lesson lesson = new Lesson();
+    request.setAttribute("lesson",lesson); %>
+
+<jsp:useBean id="Lesson" scope="request" class="ae.tutorme.model.Lesson">
+    <jsp:setProperty name="Lesson" property="*"/>
+</jsp:useBean>
+<jsp:useBean id="Topic" scope="request" class="ae.tutorme.model.Topic">
+    <jsp:setProperty name="Topic" property="*"/>
+</jsp:useBean>
+<jsp:useBean id="Course" scope="request" class="ae.tutorme.model.Course">
+    <jsp:setProperty name="Course" property="*"/>
+</jsp:useBean>
+
 
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
 
-    <c:url var="addlesson" value="/lesson/addlesson"/>
+    <c:url var="addlesson" value="/lesson/add/${Course.courseId}/${topic.id}"/>
 
-    <form:form role="form" class="form-horizontal" action="${addlesson}" method="post" commandName="addLesson" enctype="multipart/form-data">
+    <form:form role="form" class="form-horizontal" action="${addlesson}" method="post" commandName="Lesson" enctype="multipart/form-data">
         <h1>Course information: </h1>
         <div class="form-group">
             <div class="col-sm-9">
@@ -34,7 +48,7 @@
                 <p>Upload Lesson Video </p>  <form:input    path="lessonMaterial" id="lessonMaterial" type="file" class="form:input-larg"/>
             </div>
             <div class="col-sm-9">
-              <p>Upload Lesson thumbnail </p>  <form:input    path="lessonImage" id="lessonImage" type="file" class="form:input-larg"/>
+              <p>Upload Lesson thumbnail </p>  <form:input    path="video" id="lessonImage" type="file" class="form:input-larg"/>
             </div>
         </div>
 

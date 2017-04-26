@@ -6,6 +6,7 @@ import ae.tutorme.model.Course;
 import ae.tutorme.model.Instructor;
 import ae.tutorme.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -104,25 +105,17 @@ public class CourseMVC {
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{courseId}")
-    public String getCourseById(@PathVariable int courseId, Model model) {
 
+    @RequestMapping(method = RequestMethod.GET, value = "/updateCourse/{courseId}")
+    public String getCourseById(@PathVariable int courseId, HttpServletRequest request) {
         Course course = courseDAO.getCourseById(courseId);
-        model.addAttribute("course", course);
-        return "";
+        if (course == null) {
+            return "404";
+        }
+        request.setAttribute("course",course);
+        return "updatecourse";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/instructor/{instructorId}")
-    public String getCourseByInstructorId(@PathVariable int instructorId, Model model) {
-        List<Course> courses = courseDAO.getCourseByTeacherId(instructorId);
-        model.addAttribute("instructorCourses", courses);
-        return "";
-    }
 
-    @RequestMapping(method = RequestMethod.PUT)
-    public String updateCourse(@ModelAttribute("course") Course course) {
-        courseDAO.updateCourse(course);
-        return "";
-    }
 }
 

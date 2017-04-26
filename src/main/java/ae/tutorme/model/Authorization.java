@@ -16,7 +16,7 @@ public class Authorization
     private int id;
 
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumns({
             @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID"),
             @JoinColumn(name = "USERNAME", referencedColumnName = "USERNAME") })

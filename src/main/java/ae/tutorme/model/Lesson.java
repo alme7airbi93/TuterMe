@@ -17,7 +17,7 @@ public class Lesson {
     @Column(name = "LESSON_ID")
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @PrimaryKeyJoinColumn
     private Topic topic;
 

@@ -55,11 +55,9 @@
                         <td>${course.rating}</td>
                         <td>${course.enabled}</td>
                         <td>${course.price} AED</td>
-                        <td><a href="<c:url value="/Instructor/course/courseDetail/${course.courseId}" />">
+                        <td><a href="<c:url value="/course/updateCourse/${course.courseId}" />">
                             <span class="glyphicon glyphicon-info-sign"></span></a>
-                            <a href="<c:url value="/Instructor/course/RequestDelete/${course.courseId}" />">
-                                <span class="glyphicon glyphicon-remove"></span></a>
-                            <a href="<c:url value="/Instructor/course/editCourse/${course.courseId}" />">
+                            <a href="<c:url value="/course/editCourse/${course.courseId}" />">
                                 <span class="glyphicon glyphicon-pencil"></span></a></td>
                     </tr>
                 </c:forEach>

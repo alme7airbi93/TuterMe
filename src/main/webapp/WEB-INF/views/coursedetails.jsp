@@ -24,16 +24,16 @@
                     <div class="preview col-md-6">
 
                         <div class="preview-pic tab-content">
-                            <div class="tab-pane active" id="pic-1"><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}/1.png" />" /></div>
+                            <div class="tab-pane active" id="pic-1"><img src="<c:url value="/resources/images/instructor/${course.userid}/courses/${course.id}.png" />" /></div>
 
                             <c:forEach var="lesson" items="${lessons}">
-                            <div class="tab-pane" id="pic-${lesson.id + 1}"><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}/${lesson.id + 1}.png" />" /></div>
+                            <div class="tab-pane" id="pic-${lesson.id}"><img src="<c:url value="/resources/images/instructor/${course.userid}/courses/${course.id}/${lesson.id}.png" />" /></div>
                             </c:forEach>
                         </div>
                         <ul class="preview-thumbnail nav nav-tabs">
-                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}/1.png" />" /></a></li>
+                            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}.png" />" /></a></li>
                             <c:forEach var="lesson" items="${lessons}">
-                            <li><a data-target="#pic-${lesson.id + 1}" data-toggle="tab"><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}/${lesson.id + 1}.png" />" /></a></li>
+                            <li><a data-target="#pic-${lesson.id}" data-toggle="tab"><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}/${lesson.id}.png" />" /></a></li>
                             </c:forEach>
                              </ul>
 

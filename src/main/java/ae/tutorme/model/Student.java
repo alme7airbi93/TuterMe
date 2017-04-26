@@ -14,10 +14,10 @@ import java.util.Set;
 public class Student extends User
 {
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "student")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,mappedBy = "student")
     private Set<Enrollment> enrollments = new HashSet<>(0);
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "student")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,mappedBy = "student")
     private Set<Rate> rates = new HashSet<>(0);
     
     public Student(int userId, String userName, String password, boolean enabled, String name, Activation activation, Authorization authorization, Set<Message> messages, Set<Enrollment> enrollments, Set<Rate> rates) {

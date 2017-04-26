@@ -23,7 +23,7 @@ public class Category {
     @Column(name = "CATEGORY_NAME")
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL,mappedBy = "category")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,mappedBy = "category")
     private Set<Course> courses = new HashSet<>(0);
     
     public Category(int categoryId, String name, Set<Course> courses) {

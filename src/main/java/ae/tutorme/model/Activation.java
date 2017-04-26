@@ -29,7 +29,7 @@ public class Activation
     @Column(name = "EXPIRY_DATE")
     private Date expiryDate;
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy="activation")
+    @OneToOne(fetch = FetchType.EAGER, mappedBy="activation")
     @JsonIgnore
     private User user;
 

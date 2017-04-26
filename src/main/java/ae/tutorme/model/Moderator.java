@@ -14,7 +14,7 @@ import java.util.Set;
 public class Moderator extends User
 {
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST,mappedBy = "moderator")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST,mappedBy = "moderator")
     private Set<Course> courses = new HashSet<>(0);
     
     public Moderator(int userId, String userName, String password, boolean enabled, String name, Activation activation, Authorization authorization, Set<Message> messages, Set<Course> courses) {
