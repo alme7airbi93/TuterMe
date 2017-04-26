@@ -1,6 +1,7 @@
 package ae.tutorme.model;
 
 import org.hibernate.annotations.Formula;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 
@@ -39,6 +40,9 @@ public class Course {
 
     @Column(name = "ENABLED")
     private boolean enabled;
+
+    @Transient
+    private MultipartFile courseImage;
 
     @Formula("(select IFNULL(sum(rate.RATING) / count(*), 0) from RATE rate where rate.course_COURSE_ID = COURSE_ID)")
     private double rating;
@@ -202,5 +206,14 @@ public class Course {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+
+    public MultipartFile getCourseImage() {
+        return courseImage;
+    }
+
+    public void setCourseImage(MultipartFile courseImage) {
+        this.courseImage = courseImage;
     }
 }

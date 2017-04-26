@@ -11,7 +11,6 @@
 <body>
 <%@include file="fragment/bodyHeader.jsp"%>
 
-This is the fragment we have the problem with
 
 
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">

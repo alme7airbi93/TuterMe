@@ -1,3 +1,6 @@
+<%@ page import="org.springframework.ui.Model" %>
+<%@ page import="ae.tutorme.model.Student" %>
+<%@ page import="java.applet.AppletContext" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="topbar animated fadeInLeftBig"></div>
