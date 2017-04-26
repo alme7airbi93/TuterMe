@@ -16,9 +16,9 @@
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
 
-    <c:url var="regUrl" value="/instructor/savecourse"/>
+    <c:url var="adCourse" value="/instructor/course/savecourse"/>
 
-    <form:form role="form" class="form-horizontal" action="${regUrl}" method="post" commandName="savecourse" >
+    <form:form role="form" class="form-horizontal" action="${adCourse}" method="post" commandName="savecourse" >
         <h1>Course information: </h1>
         <div class="form-group">
             <div class="col-sm-9">

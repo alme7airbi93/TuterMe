@@ -25,18 +25,7 @@ public class StudentMVC {
     @Autowired
     private UserDAO userDAO;
 
-    @RequestMapping(method = RequestMethod.GET, value = "/new")
-    public String saveStudent(Model model) {
-        Student student = new Student();
-        model.addAttribute("student", student);
-        return "";
-    }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/new")
-    public String saveStudent(@ModelAttribute("student") Student student) {
-        studentDAO.saveStudent(student);
-        return "";
-    }
 
     @RequestMapping(method = RequestMethod.GET, value = "/update")
     public String updateStudent(Model model) {
