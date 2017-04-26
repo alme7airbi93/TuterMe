@@ -57,14 +57,14 @@ public class Authorization
     public void setUser(User user) {
         if(user instanceof Instructor)
         {
-            setRole("TEACHER");
+            setRole("ROLE_TEACHER");
         }else if (user instanceof Admin)
         {
-            setRole("ADMIN");
+            setRole("ROLE_ADMIN");
         } else if (user instanceof Moderator) {
-            setRole("MODERATOR");
+            setRole("ROLE_MODERATOR");
         } else if (user instanceof Student) {
-            setRole("STUDENT");
+            setRole("ROLE_STUDENT");
         }
         this.user = user;
     }

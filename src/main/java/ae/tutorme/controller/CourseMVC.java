@@ -6,6 +6,7 @@ import ae.tutorme.model.Course;
 import ae.tutorme.model.Instructor;
 import ae.tutorme.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -26,8 +27,10 @@ import java.util.List;
  * Created by almehairbi on 2/28/17.
  */
 
+
+//@Secured({"ADMIN","INSTRUCTOR"})
 @Controller
-@RequestMapping(value = "/instructor/course")
+@RequestMapping(value = "/course")
 public class CourseMVC {
 
 
@@ -40,7 +43,7 @@ public class CourseMVC {
     private UserDAO userDAO;
 
     @RequestMapping(method = RequestMethod.POST, value = "/savecourse")
-    public String saveCourse(@ModelAttribute("course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
+    public String saveCourse(@ModelAttribute("Course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
 
         Instructor i = (Instructor) session.getAttribute("user");
 
@@ -77,11 +80,8 @@ public class CourseMVC {
         return "/editcourse";
     }
 
-    @RequestMapping("/createcourse")
-    public String createCourse(Model model) {
-
-        Course course = new Course();
-        model.addAttribute("savecourse",course);
+    @RequestMapping("/addCourse")
+    public String createCourse() {
         return "createcourse";
     }
 
