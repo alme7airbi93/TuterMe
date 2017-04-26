@@ -16,19 +16,19 @@
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
 
-    <h3>Shopping Cart</h3>
+
 
 
 
     <div class="container-wrapper">
         <div class="container">
             <div class="page-header">
-                <h1>Product Inventory Page</h1>
-                <p class="lead">This is the product inventory page!</p>
+                <h1>Instructor Dashboard</h1>
+                <p class="lead">This is your dashboard as an instructor, get started by creating a course, or editing a previously created course</p>
             </div>
 
-            <a href="<c:url value="/admin/inventory/addProduct" />" class="btn btn-primary">
-                Add Product</a>
+            <a href="<c:url value="/course/addCourse" /> " class="btn btn-primary">
+                Create Course</a>
 
             <br><br>
 
@@ -36,9 +36,9 @@
             <table class="table table-striped table-hover">
                 <thead>
                 <tr class="bg-success">
-                    <th>Photo Thumb</th>
+                    <th>Course Thumb</th>
                     <th>Name</th>
-                    <th>Category</th>
+                    <th>Rating</th>
                     <th>Condition</th>
                     <th>Price</th>
                     <th></th>
@@ -46,19 +46,20 @@
                 </thead>
 
                 <tbody>
-                <c:forEach var="course" items="${courses}">
+                <c:forEach var="course" items="${user.courses}">
                     <tr>
-                        <td><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}.png" />"
-                                 alt="image" style="width: 100%"></td>
+                        <div class="col-md-4">
+                        <td ><img src="<c:url value="/resources/images/instructor/${user.userId}/courses/${course.courseId}/${course.courseId}.png" />"
+                                  alt="image" style="width: 100%"></td> </div>
                         <td>${course.name}</td>
                         <td>${course.rating}</td>
                         <td>${course.enabled}</td>
-                        <td>${product.price} AED</td>
-                        <td><a href="<c:url value="/Instructor/course/courseDetail/${course.id}" />">
+                        <td>${course.price} AED</td>
+                        <td><a href="<c:url value="/Instructor/course/courseDetail/${course.courseId}" />">
                             <span class="glyphicon glyphicon-info-sign"></span></a>
-                            <a href="<c:url value="/Instructor/course/RequestDelete/${course.id}" />">
+                            <a href="<c:url value="/Instructor/course/RequestDelete/${course.courseId}" />">
                                 <span class="glyphicon glyphicon-remove"></span></a>
-                            <a href="<c:url value="/Instructor/course/editCourse/${course.id}" />">
+                            <a href="<c:url value="/Instructor/course/editCourse/${course.courseId}" />">
                                 <span class="glyphicon glyphicon-pencil"></span></a></td>
                     </tr>
                 </c:forEach>
@@ -67,7 +68,6 @@
         </div>
     </div>
 
-    <a class="button" href="<c:url value="/instructor/course/createCourse" /> ">Create Course</a>
 
 </div>
 <!-- works -->

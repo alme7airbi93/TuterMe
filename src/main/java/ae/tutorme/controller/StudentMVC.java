@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by almehairbi on 2/28/17.
  */
 @Controller
-@RequestMapping("/customer")
+@RequestMapping("/student")
 public class StudentMVC {
 
     @Autowired
@@ -26,28 +26,34 @@ public class StudentMVC {
     private UserDAO userDAO;
 
 
-
-    @RequestMapping(method = RequestMethod.GET, value = "/update")
-    public String updateStudent(Model model) {
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        User student = null;
-
-        if (principal instanceof Student) {
-            student = (Student) principal;
-        } else {
-            String username = principal.toString();
-            student = userDAO.getUserBuUserName(username);
-        }
-
-        model.addAttribute("student", student);
-        return "";
+    @RequestMapping("/home")
+    public String studentHome() {
+        return "courses";
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "/update")
-    public String updateStudent(@ModelAttribute("student") Student student) {
-        studentDAO.updateStudentProfile(student);
-        return "";
-    }
+
+//
+//    @RequestMapping(method = RequestMethod.GET, value = "/update")
+//    public String updateStudent(Model model) {
+//        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//        User student = null;
+//
+//        if (principal instanceof Student) {
+//            student = (Student) principal;
+//        } else {
+//            String username = principal.toString();
+//            student = userDAO.getUserBuUserName(username);
+//        }
+//
+//        model.addAttribute("student", student);
+//        return "";
+//    }
+
+//    @RequestMapping(method = RequestMethod.POST, value = "/update")
+//    public String updateStudent(@ModelAttribute("student") Student student) {
+//        studentDAO.updateStudentProfile(student);
+//        return "";
+//    }
 
 
 }

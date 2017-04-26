@@ -70,7 +70,7 @@ public class CourseMVC {
         // Making file path
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
         path = Paths.get(rootDirectory + "/WEB-INF/resources/images/instructor/"+ i.getUserId()+"/"+
-                "courses/"+ course.getCourseId() +"/" + course.getCourseId()+".png");
+                "courses/"+ course.getCourseId() +"/" + course.getCourseId()+"." + "png");
         // creating the directories
         File file = new File(path.toString());
         if (!file.exists()) {
@@ -95,7 +95,7 @@ public class CourseMVC {
                 throw new RuntimeException("Course image saving failed.", e);
             }
         }
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @RequestMapping("/addCourse")

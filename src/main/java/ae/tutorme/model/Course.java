@@ -71,6 +71,7 @@ public class Course {
         this.price = 0;
         this.rating = 0;
         this.enabled = false;
+
     }
     
     public Course(int courseId, Instructor instructor, Moderator moderator, String description, double price, String name, boolean enabled, double rating, Set<Enrollment> enrollments, Set<Topic> topics, Set<Rate> rates, Category category) {

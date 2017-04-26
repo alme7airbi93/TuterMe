@@ -36,8 +36,28 @@ public class HomeMVC {
     public String home(Principal principal, HttpSession session) {
         String userName = principal.getName();
         User user = userDAO.getUserBuUserName(userName);
-        session.setAttribute("user", user);
-        return "index";
+
+        if (user instanceof Student) {
+            Student student = (Student) user;
+            session.setAttribute("user", student);
+            return "redirect:/student/home";
+        } else if (user instanceof Instructor) {
+            Instructor instructor = (Instructor) user;
+            session.setAttribute("user", instructor);
+            return "redirect:/instructor/home";
+        } else if (user instanceof Moderator) {
+            Moderator moderator = (Moderator) user;
+            session.setAttribute("user", moderator);
+            return "redirect:/moderator/home";
+        } else if (user instanceof Admin) {
+            Admin admin = (Admin) user;
+            session.setAttribute("user", admin);
+            return "redirect:/admin/home";
+        }else
+        {
+            return "404";
+        }
+
     }
 
     @RequestMapping("/categories")
