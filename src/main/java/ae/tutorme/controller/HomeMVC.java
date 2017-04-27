@@ -26,13 +26,8 @@ public class HomeMVC {
     private TutormeMailSender tutormeMailSender;
 
     @RequestMapping("/")
-    public String home(Model model, HttpSession session) {
-        if (session.getAttribute("user") == null) {
-            Student student = new Student();
-            Instructor instructor = new Instructor();
-            model.addAttribute("guest", student);
-            model.addAttribute("instructor", student);
-        }
+    public String home() {
+
         return "index";
     }
 
@@ -51,23 +46,16 @@ public class HomeMVC {
         return "categories";
     }
 
-    @RequestMapping("/instructor/createcourse")
-    public String createCourse(Model model) {
-
-        Course course = new Course();
-        model.addAttribute("savecourse",course);
-        return "createcourse";
-    }
 
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
-    public String studentReg(@ModelAttribute("student") Student student) {
+    public String studentReg(@ModelAttribute("Student") Student student) {
         createUser(student);
         return "vertification";
     }
 
     @RequestMapping(value = "/instructor/register", method = RequestMethod.POST)
-    public String instructorReg(@ModelAttribute("instructor") Instructor instructor) {
+    public String instructorReg(@ModelAttribute("Instructor") Instructor instructor) {
         createUser(instructor);
         return "vertification";
     }
@@ -80,6 +68,7 @@ public class HomeMVC {
         user.setActivation(activation);
         user.setAuthorization(authorization);
         userDAO.saveUser(user);
+
         tutormeMailSender.sendVirfication(user);
         return user;
 
