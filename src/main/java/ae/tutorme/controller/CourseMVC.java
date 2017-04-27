@@ -38,7 +38,7 @@ public class CourseMVC {
     @Autowired
     private UserDAO userDAO;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/savecourse")
+    @RequestMapping(method = RequestMethod.POST, value = "/instructor/savecourse")
     public String saveCourse(@ModelAttribute("course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
 
         String username = (String) session.getAttribute("userName");
