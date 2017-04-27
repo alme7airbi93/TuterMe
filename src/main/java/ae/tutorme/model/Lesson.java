@@ -1,5 +1,7 @@
 package ae.tutorme.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 
 /**
@@ -27,7 +29,14 @@ public class Lesson {
 
     @Column(name = "MATERIAL_PATH")
     private String materialPath;
-    
+
+    @Transient
+    private MultipartFile video;
+
+
+    @Transient
+    private MultipartFile picture;
+
     public Lesson(int id, Topic topic, String lessonName, int lessonNumber, String materialPath) {
 		super();
 		this.id = id;
@@ -90,5 +99,25 @@ public class Lesson {
 
     public void setMaterialPath(String materialPath) {
         this.materialPath = materialPath;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public MultipartFile getVideo() {
+        return video;
+    }
+
+    public void setVideo(MultipartFile video) {
+        this.video = video;
+    }
+
+    public MultipartFile getPicture() {
+        return picture;
+    }
+
+    public void setPicture(MultipartFile picture) {
+        this.picture = picture;
     }
 }

@@ -67,7 +67,6 @@
         </div>
     </div>
 
-    <a class="button" href="<c:url value="/instructor/course/createCourse" /> ">Create Course</a>
 
 </div>
 <!-- works -->
