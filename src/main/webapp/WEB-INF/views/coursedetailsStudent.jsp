@@ -63,7 +63,7 @@
                                 <img src ="images/glyphicons/glyphicons-49-star-empty.png"/>
                                 <span class="fa fa-star"></span>
                             </div>
-                            <span class="review-no">142 ratings</span>
+
                         </div>
                         </c:if>
                         <c:if test="${course.rating > 1 && course.rating < 1.5}">
@@ -76,7 +76,7 @@
                                     <img src ="images/glyphicons/glyphicons-49-star-empty.png"/>
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="review-no">142 ratings</span>
+
                             </div>
                         </c:if>
                         <c:if test="${course.rating > 1.5 && course.rating < 2}">
@@ -89,7 +89,7 @@
                                     <img src ="images/glyphicons/glyphicons-49-star-empty.png"/>
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="review-no">142 ratings</span>
+
                             </div>
                         </c:if>
                         <c:if test="${course.rating >= 2 && course.rating < 2.5}">
@@ -102,7 +102,7 @@
                                     <img src ="images/glyphicons/glyphicons-49-star-empty.png"/>
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="review-no">142 ratings</span>
+
                             </div>
                         </c:if>
                         <c:if test="${course.rating >= 2.5 && course.rating < 3}">
@@ -115,7 +115,7 @@
                                     <img src ="images/glyphicons/glyphicons-49-star-empty.png"/>
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="review-no">142 ratings</span>
+
                             </div>
                         </c:if>
                         <c:if test="${course.rating >= 3 && course.rating < 3.5}">
@@ -128,7 +128,7 @@
                                     <img src ="images/glyphicons/glyphicons-49-star-empty.png"/>
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="review-no">142 ratings</span>
+
                             </div>
                         </c:if>
                         <c:if test="${course.rating >= 3.5 && course.rating < 4}">
@@ -154,7 +154,7 @@
                                     <img src ="images/glyphicons/glyphicons-49-star-empty.png"/>
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="review-no">142 ratings</span>
+
                             </div>
                         </c:if>
                         <c:if test="${course.rating >= 4.5 && course.rating < 5}">
@@ -180,7 +180,7 @@
                                     <img src ="images/glyphicons/glyphicons-50-star.png"/>
                                     <span class="fa fa-star"></span>
                                 </div>
-                                <span class="review-no">142 ratings</span>
+
                             </div>
                         </c:if>
                         <p class="product-description">${course.description}</p>
@@ -188,7 +188,9 @@
                         <p class="vote"><strong>Instructor: </strong>${instructor.id}</p>
 
 
-
+                        <div class="action">
+                            <button class="add-to-cart btn btn-default" type="button">Enroll in course</button>
+                        </div>
 
                         
                         

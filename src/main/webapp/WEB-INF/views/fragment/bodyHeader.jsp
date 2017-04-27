@@ -1,6 +1,4 @@
-<%@ page import="org.springframework.ui.Model" %>
 <%@ page import="ae.tutorme.model.Student" %>
-<%@ page import="java.applet.AppletContext" %>
 <%@ page import="ae.tutorme.model.Instructor" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%

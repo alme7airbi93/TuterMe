@@ -54,6 +54,8 @@ public class HomeMVC {
         return "vertification";
     }
 
+
+
     @RequestMapping(value = "/instructor/register", method = RequestMethod.POST)
     public String instructorReg(@ModelAttribute("Instructor") Instructor instructor) {
         createUser(instructor);

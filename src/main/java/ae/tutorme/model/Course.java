@@ -60,6 +60,8 @@ public class Course {
     @PrimaryKeyJoinColumn(name = "CATEGORY_ID")
     private Category category;
 
+
+
     public Course() {
         this.description = "";
         this.category = null;

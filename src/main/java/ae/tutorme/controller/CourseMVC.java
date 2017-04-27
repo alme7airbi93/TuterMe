@@ -4,7 +4,6 @@ import ae.tutorme.dao.CourseDAO;
 import ae.tutorme.dao.UserDAO;
 import ae.tutorme.model.Course;
 import ae.tutorme.model.Instructor;
-import ae.tutorme.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -82,16 +81,23 @@ public class CourseMVC {
 
         Course course = new Course();
         model.addAttribute("savecourse",course);
+
         return "createcourse";
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{courseId}")
-    public String getCourseById(@PathVariable int courseId, Model model) {
+    @RequestMapping(method = RequestMethod.GET, value = "/{instructorId}")
+    public String getCourseByInstructorbyId(@PathVariable int instructorId, Model model) {
 
-        Course course = courseDAO.getCourseById(courseId);
-        model.addAttribute("course", course);
-        return "";
+        List<Course> courses = courseDAO.getCourseByTeacherId(instructorId);
+        model.addAttribute("courses", courses);
+        return "instructordashboard";
+    }
+
+    @RequestMapping("/")
+    public String home() {
+
+        return "index";
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/instructor/{instructorId}")

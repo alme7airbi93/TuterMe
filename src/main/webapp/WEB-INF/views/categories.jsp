@@ -10,8 +10,8 @@
 <%@include file="fragment/header.jsp"%>
 </head>
 
-<body  style="background-image:url(images/BG.jpg); background-position:center; background-repeat:no-repeat">
-<div class="topbar animated fadeInLeftBig"></div>
+<body  >
+
 
 <!-- Header Starts -->
 <%@include file="fragment/bodyHeader.jsp"%>
@@ -21,6 +21,98 @@
 <!-- #Sarch -->
 <div style="background:rgba(255,255,255,0.7); margin-top:20px; " >
 <div class="container" style="margin:0px 0px 25px 170px ;" >
+
+    <div id="works"  class=" clearfix grid" style="rgba(255,255,255,0.8)">
+        <figure class="effect-oscar  wowload fadeInLeft">
+            <img src="<c:url value="/resources/images/categories/programming.jpeg"/>" alt="img01"/>
+            <p>  <a href="<c:url value="/logout"/>" title="1" data-gallery>View more</a></p>
+            <figcaption>
+                <h2>Programming</h2>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInDown">
+            <img src="<c:url value="/resources/images/categories/camera.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Media</h2>
+                <p> <a href="<c:url value="/courses/2"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInRight">
+            <img src="<c:url value="/resources/images/categories/math.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Mathematics</h2>
+                <p>  <a href="<c:url value="/courses/3"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInLeft">
+            <img src="<c:url value="/resources/images/categories/physics.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Physics</h2>
+                <p> <a href="<c:url value="/courses/4"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="<c:url value="/resources/images/categories/healthy.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Health</h2>
+                <p> <a href="<c:url value="/courses/5"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+
+        <figure class="effect-oscar  wowload fadeInRight">
+            <img src="<c:url value="/resources/images/categories/Sciences.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Science</h2>
+                <p>   <a href="<c:url value="/courses/6"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="<c:url value="/resources/images/categories/geography.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Geography</h2>
+                <p>  <a href="<c:url value="/courses/7"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="<c:url value="/resources/images/categories/security.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Computer Security</h2>
+                <p> <a href="<c:url value="/courses/8"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="<c:url value="/resources/images/categories/business.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Business</h2>
+                <p>  <a href="<c:url value="/courses/9"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="<c:url value="/resources/images/categories/art.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Art</h2>
+                <p>  <a href="<c:url value="/courses/10"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="<c:url value="/resources/images/categories/music.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Music</h2>
+                <p> <a href="<c:url value="/courses/11"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+        <figure class="effect-oscar  wowload fadeInUp">
+            <img src="<c:url value="/resources/images/categories/SPORT.jpeg"/>" alt="img01"/>
+            <figcaption>
+                <h2>Sport</h2>
+                <p>  <a href="<c:url value="/courses/12"/>" title="1" data-gallery>View more</a></p>
+            </figcaption>
+        </figure>
+
+
+
+
+    </div>
 
     
     
@@ -45,39 +137,8 @@
 
 
 
-<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title">Title</h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-</div>
 
 
-
-<!-- jquery -->
-<script src="assets/jquery.js"></script>
-
-<!-- wow script -->
-<script src="assets/wow/wow.min.js"></script>
-
-
-<!-- boostrap -->
-<script src="assets/bootstrap/js/bootstrap.js" type="text/javascript" ></script>
-
-<!-- jquery mobile -->
-<script src="assets/mobile/touchSwipe.min.js"></script>
-<script src="assets/respond/respond.js"></script>
-
-<!-- gallery -->
-<script src="assets/gallery/jquery.blueimp-gallery.min.js"></script>
-
-<!-- custom script -->
-<script src="assets/script.js"></script>
 
 </div>
 
