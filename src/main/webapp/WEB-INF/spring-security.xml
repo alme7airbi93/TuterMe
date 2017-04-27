@@ -10,11 +10,16 @@
 
     <global-method-security secured-annotations="enabled" />
 
-    <http auto-config="true">
-        <intercept-url pattern="/**" access="permitAll" />
-        <intercept-url pattern='/admin/**' access='hasRole("ADMIN")' />
-        <intercept-url pattern='/instructor/**' access='hasRole("ADMIN,MODERATOR,INSTRUCTOR")'/>
-        <intercept-url pattern='/moderator' access='hasRole("MODERATOR")' />
+    <beans:bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+        <beans:property name="rolePrefix" value="" />
+    </beans:bean>
+
+    <http  auto-config="true">
+        <!--<intercept-url pattern="/**" access="permitAll" />-->
+        <intercept-url pattern='/admin/**' access="hasAnyRole('ROLE_ADMIN')" />
+        <intercept-url pattern='/instructor/**' access="hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_TEACHER')"/>
+        <intercept-url pattern='/moderator/**' access="hasAnyRole('ROLE_MODERATOR','ROLE_ADMIN')" />
+        <intercept-url pattern='/course/**' access="hasAnyRole( 'ROLE_ADMIN','ROLE_TEACHER')" />
         <!-- access denied page -->
         <!-- this is my first time on spring security -->
         <form-login login-processing-url="/login"
@@ -33,13 +38,15 @@
                 delete-cookies="true"
                 logout-success-url="/" />
 
+        <remember-me key="uniqueAndSecret" token-validity-seconds="86400"/>
+
        <csrf disabled="true"/>
    </http>
 
     <!-- logout-url="/j_logout" -->
 
    <authentication-manager>
-       <authentication-provider>
+       <authentication-provider  >
            <!--<password-encoder hash="md5" />-->
             <!-- if not working add datasource up there -->
             <jdbc-user-service data-source-ref="dataSource"

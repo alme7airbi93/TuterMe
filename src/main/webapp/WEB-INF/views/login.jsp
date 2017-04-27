@@ -15,34 +15,38 @@
 
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
-
-
-    <c:url value="/login" var="urlLogin"/>
-    <form:form role="form" class="form-horizontal">
+    <c:url value="/login" var="login"/>
+    <form action="${login}" role="form" class="form-horizontal" method="post">
         <div class="form-group">
-            <label for="email1" class="col-sm-3 control-label">
+            <label for="username" class="col-sm-3 control-label">
                 Email</label>
             <div class="col-sm-9">
-                <input type="email" class="form-control" id="email1" placeholder="Email" />
+                <input name="username" type="email" class="form-control" id="username" placeholder="Email" />
             </div>
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1" class="col-sm-3 control-label">
                 Password</label>
             <div class="col-sm-9">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rememberMe" class="col-sm-3 control-label">
+                Remember me :</label>
+            <div class="col-sm-9">
+                <input id="rememberMe" type="checkbox" name="remember-me" />
             </div>
         </div>
         <div class="row">
             <div class="col-sm-3">
             </div>
             <div class="col-sm-5">
-                <button type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px">
-                    Submit</button>
+                <input type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px"/>
                 <a href="javascript:;">Forgot your password?</a>
             </div>
         </div>
-    </form:form>
+    </form>
 
 
 </div>

@@ -1,3 +1,4 @@
+<%@ page import="ae.tutorme.model.Course" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -14,11 +15,17 @@
 
 
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
+<%
+    Course course = new Course();
+    request.setAttribute("course",course);
+%>
+    <jsp:useBean id="Course" class="ae.tutorme.model.Course" scope="request">
+        <jsp:setProperty name="Course" property="*"/>
+    </jsp:useBean>
 
+    <c:url var="adCourse" value="/course/savecourse"/>
 
-    <c:url var="adCourse" value="/instructor/course/savecourse"/>
-
-    <form:form role="form" class="form-horizontal" action="${adCourse}" method="post" commandName="savecourse" >
+    <form:form role="form" class="form-horizontal" action="${adCourse}" method="post" commandName="Course" enctype="multipart/form-data" >
         <h1>Course information: </h1>
         <div class="form-group">
             <div class="col-sm-9">

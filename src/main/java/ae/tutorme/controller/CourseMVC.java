@@ -4,7 +4,9 @@ import ae.tutorme.dao.CourseDAO;
 import ae.tutorme.dao.UserDAO;
 import ae.tutorme.model.Course;
 import ae.tutorme.model.Instructor;
+import ae.tutorme.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,15 +22,19 @@ import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created by almehairbi on 2/28/17.
  */
 
+
+//@Secured({"ADMIN","INSTRUCTOR"})
 @Controller
-@RequestMapping(value = "/instructor/course")
+@RequestMapping(value = "/course")
 public class CourseMVC {
 
+//    private static final Logger logger = Logger.getLogger(CourseMVC.class);
 
     private Path path;
 
@@ -38,8 +44,13 @@ public class CourseMVC {
     @Autowired
     private UserDAO userDAO;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/instructor/savecourse")
-    public String saveCourse(@ModelAttribute("course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
+    @RequestMapping(method = RequestMethod.POST, value = "/savecourse")
+    public String saveCourse(@ModelAttribute("Course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
+
+        if(result.hasErrors())
+        {
+            return "redirect:/addCourse";
+        }
 
         Instructor i = (Instructor) session.getAttribute("user");
 
@@ -54,18 +65,29 @@ public class CourseMVC {
 
         userDAO.updateProfile(i);
 
-        courseDAO.saveCourse(course);
-
         MultipartFile courseImage = course.getCourseImage();
 
+        // Making file path
         String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectory + "/WEB-INF/resources/images/" + course.getCourseId() + ".png");
+        path = Paths.get(rootDirectory + "/WEB-INF/resources/images/instructor/"+ i.getUserId()+"/"+
+                "courses/"+ course.getCourseId() +"/" + course.getCourseId()+".png");
+        // creating the directories
+        File file = new File(path.toString());
+        if (!file.exists()) {
+            if (file.mkdirs()) {
+                System.out.println("file :" + file.toString() +" created");
+            }else
+            {
+                System.out.println("File didn't created");
+            }
 
+        }
+        // adding the image to the directory
         if(courseImage != null && !courseImage.isEmpty())
         {
             try
             {
-                courseImage.transferTo(new File(path.toString()));
+                courseImage.transferTo(file);
 
             } catch (Exception e)
             {
@@ -73,31 +95,21 @@ public class CourseMVC {
                 throw new RuntimeException("Course image saving failed.", e);
             }
         }
-        return "/editcourse";
+        return "redirect:/";
     }
 
-    @RequestMapping("/createcourse")
-    public String createCourse(Model model) {
-
-        Course course = new Course();
-        model.addAttribute("savecourse",course);
-
+    @RequestMapping("/addCourse")
+    public String createCourse() {
         return "createcourse";
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/{instructorId}")
-    public String getCourseByInstructorbyId(@PathVariable int instructorId, Model model) {
+    @RequestMapping(method = RequestMethod.GET, value = "/{courseId}")
+    public String getCourseById(@PathVariable int courseId, Model model) {
 
-        List<Course> courses = courseDAO.getCourseByTeacherId(instructorId);
-        model.addAttribute("courses", courses);
-        return "instructordashboard";
-    }
-
-    @RequestMapping("/")
-    public String home() {
-
-        return "index";
+        Course course = courseDAO.getCourseById(courseId);
+        model.addAttribute("course", course);
+        return "";
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/instructor/{instructorId}")

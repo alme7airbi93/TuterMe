@@ -48,15 +48,13 @@ public class HomeMVC {
 
 
 
-    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/register/student", method = RequestMethod.POST)
     public String studentReg(@ModelAttribute("Student") Student student) {
         createUser(student);
         return "vertification";
     }
 
-
-
-    @RequestMapping(value = "/instructor/register", method = RequestMethod.POST)
+    @RequestMapping(value = "/register/instructor", method = RequestMethod.POST)
     public String instructorReg(@ModelAttribute("Instructor") Instructor instructor) {
         createUser(instructor);
         return "vertification";

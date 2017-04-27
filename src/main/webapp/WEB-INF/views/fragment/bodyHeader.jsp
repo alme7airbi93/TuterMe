@@ -202,21 +202,25 @@
                                                    placeholder="Password"/>
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label for="rememberMe" class="col-sm-3 control-label">
+                                            Remember me :</label>
+                                        <div class="col-sm-9">
+                                            <input id="rememberMe" type="checkbox" name="remember-me" />
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-sm-3">
                                         </div>
                                         <div class="col-sm-5">
-                                            <input type="submit" class="btn btn-primary btn-sm"
-                                                   style="margin-bottom: 5px"/>
+                                            <input type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px"/>
                                             <a href="javascript:;">Forgot your password?</a>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-                            <%--<c:if test="${user == null}">--%>
-                                <%--<c:if test="${guest != null}">--%>
                                     <div class="tab-pane" id="Registration">
-                                        <c:url var="regUrl" value="/register"/>
+                                        <c:url var="regUrl" value="/register/student"/>
 
                                         <form:form role="form" class="form-horizontal" action="${regUrl}" method="post"
                                                    commandName="Student">
@@ -258,9 +262,6 @@
                                             </div>
                                         </form:form>
                                     </div>
-                                <%--</c:if>--%>
-                            <%--</c:if>--%>
-
                         </div>
                     </div>
                 </div>
@@ -292,13 +293,10 @@
                         </ul>
                         <!-- Tab panes -->
 
-
-                        <%--<c:if test="${user == null}">--%>
-                            <%--<c:if test="${guest != null}">--%>
                                 <div class="tab-pane" id="Registration">
-                                    <c:url var="regUrl" value="/instructor/register"/>
+                                    <c:url var="instructorReg" value="/register/instructor"/>
 
-                                    <form:form role="form" class="form-horizontal" action="${regUrl}" method="post"
+                                    <form:form role="form" class="form-horizontal" action="${instructorReg}" method="post"
                                                commandName="Instructor">
                                         <div class="form-group">
                                             <label for="name" class="col-sm-3 control-label">
@@ -338,10 +336,6 @@
                                         </div>
                                     </form:form>
                                 </div>
-                            <%--</c:if>--%>
-                        <%--</c:if>--%>
-
-
                     </div>
                 </div>
             </div>
