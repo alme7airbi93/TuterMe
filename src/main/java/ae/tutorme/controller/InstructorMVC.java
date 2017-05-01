@@ -13,7 +13,6 @@ public class InstructorMVC {
 
     @RequestMapping("/home")
     public String instractorHome() {
-
         return "instructordashboard";
     }
 }

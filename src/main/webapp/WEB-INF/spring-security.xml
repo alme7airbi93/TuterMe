@@ -15,11 +15,12 @@
     </beans:bean>
 
     <http  auto-config="true">
-        <!--<intercept-url pattern="/**" access="permitAll" />-->
         <intercept-url pattern='/admin/**' access="hasAnyRole('ROLE_ADMIN')" />
         <intercept-url pattern='/instructor/**' access="hasAnyRole('ROLE_ADMIN','ROLE_MODERATOR','ROLE_TEACHER')"/>
         <intercept-url pattern='/moderator/**' access="hasAnyRole('ROLE_MODERATOR','ROLE_ADMIN')" />
         <intercept-url pattern='/course/**' access="hasAnyRole( 'ROLE_ADMIN','ROLE_TEACHER')" />
+        <intercept-url pattern='/student/**' access="hasAnyRole( 'ROLE_ADMIN','ROLE_STUDENT')" />
+
         <!-- access denied page -->
         <!-- this is my first time on spring security -->
         <form-login login-processing-url="/login"

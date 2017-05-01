@@ -1,11 +1,8 @@
 package ae.tutorme.dto;
 
-import ae.tutorme.model.Activation;
-import ae.tutorme.model.Authorization;
+
 import ae.tutorme.model.Message;
 import ae.tutorme.model.User;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;

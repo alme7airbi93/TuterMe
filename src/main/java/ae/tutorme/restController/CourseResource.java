@@ -1,5 +1,7 @@
 package ae.tutorme.restController;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -30,6 +32,24 @@ public class CourseResource {
 	
 	@Autowired
 	private Converter converter;
+
+
+	@RequestMapping(value="/courses", method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<?> getCourses() {
+		try {
+
+			List<Course> courses = courseDAO.getCourses();
+			ArrayList<CourseDTO> coursesDTO = new ArrayList<>();
+
+			for (Course c : courses) {
+				coursesDTO.add(new CourseDTO(c));
+			}
+			return new ResponseEntity<>(coursesDTO, HttpStatus.OK);
+		} catch (Exception ex) {
+			logger.error("getCourses()", ex);
+			return new ResponseEntity<>(Helpers.returnSingleMessage(ex.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> addCourse(@RequestBody CourseDTO course) {

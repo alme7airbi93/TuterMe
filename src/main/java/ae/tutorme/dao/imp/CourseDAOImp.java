@@ -93,4 +93,15 @@ public class CourseDAOImp implements CourseDAO {
 			return null;
 		}
 	}
+
+    @Override
+    public List<Course> getCourses() {
+
+        Session session = sessionFactory.getCurrentSession();
+        Query query = session.createQuery("from ae.tutorme.model.Course");
+        List<Course> courses = query.list();
+        session.flush();
+
+        return courses;
+    }
 }

@@ -36,9 +36,22 @@
         <div class="form-group">
 
             <div class="col-sm-9">
+                <p>Select category </p>
+                <select  name="categoryId" id="category"  class="form:input-larg">
+                <c:forEach var="category" items="${categories}">
+                    <option  value="${category.categoryId}" > ${category.name} </option>
+                </c:forEach>
+                 </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            <div class="col-sm-9">
                 <form:textarea path="description"  rows="5" cols="30" class="form-control" id="coursedesc" placeholder="Enter course description here..." />
             </div>
         </div>
+
 
         <div class="form-group">
 

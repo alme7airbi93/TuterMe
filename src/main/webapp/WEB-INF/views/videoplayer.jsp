@@ -36,13 +36,17 @@
             <div class="carousel slide slider-border" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel2">
                 <div class="carousel-inner">
                     <div class="item active">
-                        <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}/1.png" />" class="img-responsive"></a></div>
+                        <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/${course.courseId}.png" />" class="img-responsive"></a></div>
                     </div>
-                    <c:forEach var="lesson" items="${lessons}">
+                    <c:forEach var="topic" items="${course.topics}">
+                    <c:forEach var="lesson" items="${topic.lessons}">
                     <div class="item">
-                        <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="<c:url value="/resources/images/instructor/${course.instructorid}/courses/${course.id}/${lesson.id + 1}.png" />" class="img-responsive"></a></div>
+                        <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/topic/${topic.id}/${lesson.id}.png" />" class="img-responsive"></a></div>
                     </div>
-                 </c:forEach>
+
+                    </c:forEach>
+                    </c:forEach>
+
                 </div>
 
 

@@ -1,5 +1,7 @@
 package ae.tutorme.controller;
 
+import ae.tutorme.dao.CategoryDAO;
+import ae.tutorme.dao.CourseDAO;
 import ae.tutorme.dao.UserDAO;
 import ae.tutorme.model.*;
 import ae.tutorme.service.imp.TutormeMailSender;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
+import java.util.List;
 
 /**
  * Created by Ali AL-Zaabi on 2/17/2017.
@@ -25,9 +28,16 @@ public class HomeMVC {
     @Autowired
     private TutormeMailSender tutormeMailSender;
 
-    @RequestMapping("/")
-    public String home() {
+    @Autowired
+    private CategoryDAO categoryDAO;
 
+    @Autowired
+    private CourseDAO courseDAO;
+
+    @RequestMapping("/")
+    public String home(HttpSession session,Model model) {
+        List<Category> categories = categoryDAO.getCategories();
+        session.setAttribute("categories", categories);
         return "index";
     }
 
@@ -36,7 +46,9 @@ public class HomeMVC {
     public String home(Principal principal, HttpSession session) {
         String userName = principal.getName();
         User user = userDAO.getUserBuUserName(userName);
-
+        if (user == null) {
+            return "404";
+        }
         if (user instanceof Student) {
             Student student = (Student) user;
             session.setAttribute("user", student);

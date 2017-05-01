@@ -28,32 +28,32 @@
 
     <div id="works" class=" clearfix grid" style="rgba(255,255,255,0.8)">
 
-        <c:forEach var="course" items="${courses}">
+        <c:forEach var="enrollment" items="${user.enrollments}">
         <div class="col-xs-6 col-sm-3 col-md-2">
             <div class="col-item">
                 <div class="post-img-content">
-                    <img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/${course.courseId}.png" />"
+                    <img src="<c:url value="/resources/images/instructor/${enrollment.course.instructor.userId}/courses/${enrollment.course.courseId}/${enrollment.course.courseId}.png" />"
                          class="img-responsive" alt="img01"/>
                     <span class="post-title">
-                      <b>${course.category.name}</b>
+                      <b>${enrollment.course.category.name}</b>
                   </span>
                 </div>
                 <div class="info">
                     <div class="row">
                         <div class="price col-md-12">
-                            <h5>${course.name}</h5>
+                            <h5>${enrollment.course.name}</h5>
                         </div>
                     </div>
                     <div class="row">
                         <div class=" col-md-7">
-                            <h5 class="price-text-color">${course.price} AED</h5>
+                            <h5 class="price-text-color">${enrollment.course.price} AED</h5>
                         </div>
                     </div>
                 </div>
                 <div class="clear-left">
                     <p class="btn-details">
                         <i class="fa fa-list"></i>
-                        <a href="<c:url value="/student/courseDetails/${course.courseId}"/>" class="hidden-sm">More details</a></p>
+                        <a href="<c:url value="/student/enrolled/course/${enrollment.course.courseId}"/>" class="hidden-sm">Course Lessons</a></p>
                 </div>
             </div>
         </div>

@@ -7,11 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import ae.tutorme.dao.UserDAO;
 import ae.tutorme.dto.AdminDTO;
@@ -25,6 +21,8 @@ import ae.tutorme.model.Moderator;
 import ae.tutorme.model.Student;
 import ae.tutorme.model.User;
 import ae.tutorme.utils.Helpers;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by almehairbi on 3/28/17.
@@ -47,21 +45,24 @@ public class UserResource {
 
         if(user != null)
         {
-            if (user instanceof Instructor)
-            {
-                UserDTO instructorDTO = new InstructorDTO(user);
-                responseEntity = instructorDTO;
-            } else if (user instanceof Student) {
-            	responseEntity = new StudentDTO(user);
-            } else if (user instanceof Admin) {
-            	responseEntity = new AdminDTO(user);
-            } else if (user instanceof Moderator) {
-            	responseEntity = new ModeratorDTO(user);
-            }
+            responseEntity = getUserInstance(user);
         }
         return new ResponseEntity<UserDTO>(responseEntity, user != null ? HttpStatus.OK : HttpStatus.NO_CONTENT);
     };
-    
+
+
+    @RequestMapping(value = "/email",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<UserDTO> getUserByUserName(@RequestBody Map<String,Object> map)
+    {
+        User user = userDAO.getUserBuUserName((String) map.get("userName"));
+        UserDTO responseEntity = null;
+
+        if(user != null)
+        {
+            responseEntity = getUserInstance(user);
+        }
+        return new ResponseEntity<UserDTO>(responseEntity, user != null ? HttpStatus.OK : HttpStatus.NO_CONTENT);
+    };
     @RequestMapping(value = "/delete",method = RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE )
     public  ResponseEntity<?> deleteUser(@RequestBody Map<String, Object> map)
     {
@@ -79,4 +80,24 @@ public class UserResource {
     {
     	return new ResponseEntity<User>(userDAO.getUserBuUserName(userName), HttpStatus.OK);
     };
+
+
+    private UserDTO getUserInstance(User user) {
+        UserDTO userDTO = null;
+        if(user != null)
+        {
+            if (user instanceof Instructor)
+            {
+                UserDTO instructorDTO = new InstructorDTO(user);
+                userDTO = instructorDTO;
+            } else if (user instanceof Student) {
+                userDTO = new StudentDTO(user);
+            } else if (user instanceof Admin) {
+                userDTO = new AdminDTO(user);
+            } else if (user instanceof Moderator) {
+                userDTO = new ModeratorDTO(user);
+            }
+        }
+        return userDTO;
+    }
 }

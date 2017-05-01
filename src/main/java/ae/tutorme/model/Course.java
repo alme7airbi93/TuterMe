@@ -21,11 +21,11 @@ public class Course {
     @Column(name = "COURSE_ID")
     private int courseId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @PrimaryKeyJoinColumn
     private Instructor instructor;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @PrimaryKeyJoinColumn
     private Moderator moderator;
 

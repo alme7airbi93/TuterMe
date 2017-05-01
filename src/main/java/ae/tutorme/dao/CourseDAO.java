@@ -12,6 +12,8 @@ public interface CourseDAO {
 	
     Course saveCourse(Course course);
 
+    List<Course> getCourses();
+
     Course getCourseById(int id);
     
     CourseDTO getCourseDTOById(int id);

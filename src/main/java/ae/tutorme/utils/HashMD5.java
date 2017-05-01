@@ -48,7 +48,7 @@ public class HashMD5 {
             String hash = md5Sum.substring( 0,md5Sum.length() -2);
             System.out.println(hash);
             hash = hash.replace("/", "_");
-            hash = hash.replace("++", "--");
+            hash = hash.replace("+", "-");
 
 
 

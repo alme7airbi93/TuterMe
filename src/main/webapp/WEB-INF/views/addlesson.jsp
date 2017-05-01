@@ -17,45 +17,41 @@
     request.setAttribute("lesson",lesson); %>
 
 <jsp:useBean id="Lesson" scope="request" class="ae.tutorme.model.Lesson">
-    <jsp:setProperty name="Lesson" property="*"/>
+    <jsp:setProperty name="lesson" property="*"/>
 </jsp:useBean>
 <jsp:useBean id="Topic" scope="request" class="ae.tutorme.model.Topic">
-    <jsp:setProperty name="Topic" property="*"/>
+    <jsp:setProperty name="topic" property="*"/>
 </jsp:useBean>
 <jsp:useBean id="Course" scope="request" class="ae.tutorme.model.Course">
-    <jsp:setProperty name="Course" property="*"/>
+    <jsp:setProperty name="course" property="*"/>
 </jsp:useBean>
 
 
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
 
-    <c:url var="addlesson" value="/lesson/add/${Course.courseId}/${topic.id}"/>
+    <c:url var="addlesson" value="/lesson/add/${course.courseId}/${topic.id}"/>
 
-    <form:form role="form" class="form-horizontal" action="${addlesson}" method="post" commandName="Lesson" enctype="multipart/form-data">
+    <form:form role="form" class="form-horizontal" action="${addlesson}" method="post" commandName="lesson" enctype="multipart/form-data">
         <h1>Course information: </h1>
         <div class="form-group">
             <div class="col-sm-9">
-                <form:input path="name"  type="text" class="form-control" id="coursename" placeholder="Lesson Name" />
+                <form:input path="lessonName"  type="text" class="form-control" id="lessonName" placeholder="Lesson Name" />
             </div>
         </div>
-
-
-
         <div class="form-group">
 
             <div class="col-sm-9">
-                <p>Upload Lesson Video </p>  <form:input    path="lessonMaterial" id="lessonMaterial" type="file" class="form:input-larg"/>
+                <p>Upload Lesson Video </p>  <form:input    path="video" id="video" type="file" class="form:input-larg"/>
             </div>
             <div class="col-sm-9">
-              <p>Upload Lesson thumbnail </p>  <form:input    path="video" id="lessonImage" type="file" class="form:input-larg"/>
+              <p>Upload Lesson thumbnail </p>  <form:input    path="picture" id="picture" type="file" class="form:input-larg"/>
             </div>
         </div>
 
 
         <div class="col-sm-5">
-            <button type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px">
-                update</button>
+            <input type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px"/>
         </div>
     </form:form>
 

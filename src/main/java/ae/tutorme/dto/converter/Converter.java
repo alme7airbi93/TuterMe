@@ -1,15 +1,10 @@
 package ae.tutorme.dto.converter;
 
-import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import ae.tutorme.dao.ActivationDAO;
 import ae.tutorme.dao.AuthorizationDAO;
 import ae.tutorme.dao.CategoryDAO;
@@ -102,7 +97,7 @@ public class Converter {
 	public Admin toAdmin(AdminDTO adminDTO) {
 
 
-		Admin admin = new Admin(adminDTO.getUserId(), adminDTO.getUserName(), adminDTO.getPassword(), adminDTO.isEnabled(), adminDTO.getName(),
+		Admin admin = new Admin(adminDTO.getUserId(), adminDTO.getUserName(), adminDTO.getPassword(), adminDTO.getName(),
 				new Activation(), new Authorization(), toMessages(adminDTO.getMessages()));
 
 		if(admin.getActivation().getUser() == null)
@@ -115,7 +110,7 @@ public class Converter {
 	
 	public Student toStudent(StudentDTO studentDTO) {
 
-		Student student = new Student(studentDTO.getUserId(), studentDTO.getUserName(), studentDTO.getPassword(), studentDTO.isEnabled(), studentDTO.getName(),
+		Student student = new Student(studentDTO.getUserId(), studentDTO.getUserName(), studentDTO.getPassword(), studentDTO.getName(),
 				new Activation(), new Authorization(), toMessages(studentDTO.getMessages()), toEnrollments(studentDTO.getEnrollmentDTOs()),
 				toRates(studentDTO.getRates()));
 
@@ -134,7 +129,7 @@ public class Converter {
 			courses.add(toCouse(c));
 		}
 		
-		Instructor instructor = new Instructor(instructorDTO.getUserId(), instructorDTO.getUserName(), instructorDTO.getPassword(), instructorDTO.isEnabled(),
+		Instructor instructor = new Instructor(instructorDTO.getUserId(), instructorDTO.getUserName(), instructorDTO.getPassword(),
 				instructorDTO.getName(), new Activation(), new Authorization(), toMessages(instructorDTO.getMessages()), courses);
 		
 		if(instructor.getActivation().getUser() == null)
@@ -151,7 +146,7 @@ public class Converter {
 			courses.add(toCouse(c));
 		}
 		
-		Moderator moderator = new Moderator(moderatorDTO.getUserId(), moderatorDTO.getUserName(), moderatorDTO.getPassword(), moderatorDTO.isEnabled(),
+		Moderator moderator = new Moderator(moderatorDTO.getUserId(), moderatorDTO.getUserName(), moderatorDTO.getPassword(),
 				moderatorDTO.getName(), new Activation(), new Authorization(), toMessages(moderatorDTO.getMessages()), courses);
 		
 		if(moderator.getActivation().getUser() == null)

@@ -63,12 +63,14 @@
         <c:forEach var="topic" items="${course.topics}">
             <h3>${topic.topicName}</h3>
             <c:forEach var="lesson" items="${topic.lessons}">
-                <h4>${lesson.name}</h4>
-                <img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/topic/${topic.id}/${lesson.id}.png"/>">
+                <h4>${lesson.lessonName}</h4>
+                <img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/topics/${topic.id}/${lesson.id}.png"/>">
                 <img href="<c:url value="/lesson/update/${lesson.id}" />" src="<c:url value="/resources/images/glyphicons/glyphicons-31-pencil.png"/>">
             </c:forEach>
             <h4>add lesson</h4>
-            <img href="<c:url value="/lesson/add/${course.courseId}/${topic.id}" />" src="<c:url value="/resources/images/glyphicons/glyphicons-191-plus-sign.png"/>">
+           <a href="<c:url value="/lesson/add/${course.courseId}/${topic.id}" />">
+               <img  src="<c:url value="/resources/images/glyphicons/glyphicons-191-plus-sign.png"/>">
+           </a>
         </c:forEach>
 
 

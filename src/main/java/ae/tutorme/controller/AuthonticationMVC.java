@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  */
 
 @Controller
-public class Authontication {
+public class AuthonticationMVC {
 
     private static final org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Authentication.class);
 
@@ -34,10 +34,6 @@ public class Authontication {
 
     @Autowired
     private ActivationDAO activationDAO;
-
-    @Autowired
-    private TutormeMailSender tutormeMailSender;
-
 
 
     @RequestMapping("/login/fail/cred")
@@ -54,9 +50,6 @@ public class Authontication {
 
         return "vertification";
     }
-
-
-
 
 
 

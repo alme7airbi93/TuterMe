@@ -1,7 +1,9 @@
 package ae.tutorme.controller;
 
+import ae.tutorme.dao.CategoryDAO;
 import ae.tutorme.dao.CourseDAO;
 import ae.tutorme.dao.UserDAO;
+import ae.tutorme.model.Category;
 import ae.tutorme.model.Course;
 import ae.tutorme.model.Instructor;
 import ae.tutorme.model.User;
@@ -30,12 +32,9 @@ import java.util.logging.Logger;
  */
 
 
-//@Secured({"ADMIN","INSTRUCTOR"})
 @Controller
 @RequestMapping(value = "/course")
 public class CourseMVC {
-
-//    private static final Logger logger = Logger.getLogger(CourseMVC.class);
 
     private Path path;
 
@@ -44,6 +43,10 @@ public class CourseMVC {
 
     @Autowired
     private UserDAO userDAO;
+
+
+    @Autowired
+    private CategoryDAO categoryDAO;
 
     @RequestMapping(method = RequestMethod.POST, value = "/savecourse")
     public String saveCourse(@ModelAttribute("Course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
@@ -59,12 +62,25 @@ public class CourseMVC {
         {
             return "404";
         }
+        int catId = 0;
+        try {
+             catId = Integer.parseInt(request.getParameter("categoryId"));
+        } catch (NullPointerException e) {
 
+        } catch (NumberFormatException n) {
 
+        }
+
+        Category category = categoryDAO.getCategoryById(catId);
+        if (category == null) {
+            return "500";
+        }
+
+        course.setCategory(category);
         course.setInstructor(i);
         i.getCourses().add(course);
-
-        userDAO.updateProfile(i);
+        category.getCourses().add(course);
+        categoryDAO.updateCategory(category);
 
         MultipartFile courseImage = course.getCourseImage();
 
@@ -107,14 +123,24 @@ public class CourseMVC {
 
 
     @RequestMapping(method = RequestMethod.GET, value = "/updateCourse/{courseId}")
-    public String getCourseById(@PathVariable int courseId, HttpServletRequest request) {
+    public String getCourseById(@PathVariable int courseId, HttpServletRequest request,HttpSession session) {
         Course course = courseDAO.getCourseById(courseId);
-        if (course == null) {
+        Instructor instructor = (Instructor) session.getAttribute("user");
+        boolean match = false;
+        for (Course c : instructor.getCourses()) {
+            if (c.getCourseId() == courseId) {
+                match = true;
+            }
+        }
+        if (course == null || !match) {
             return "404";
         }
+
         request.setAttribute("course",course);
         return "updatecourse";
     }
+
+
 
 
 }

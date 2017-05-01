@@ -15,8 +15,8 @@ import javax.persistence.Table;
 public class Admin extends User
 {
 
-    public Admin(int userId, String userName, String password, boolean enabled, String name, Activation activation, Authorization authorization, Set<Message> messages) {
-		super(userId, userName, password, enabled, name, activation, authorization, messages);
+    public Admin(int userId, String userName, String password, String name, Activation activation, Authorization authorization, Set<Message> messages) {
+		super(userId, userName, password, name, activation, authorization, messages);
 	}
 
 	public Admin() {

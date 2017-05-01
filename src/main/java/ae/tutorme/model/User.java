@@ -57,12 +57,11 @@ public abstract class User implements Serializable
         this.password = password;
     }
     
-    public User(int userId, String userName, String password, boolean enabled, String name, Activation activation, Authorization authorization, Set<Message> messages) {
+    public User(int userId, String userName, String password, String name, Activation activation, Authorization authorization, Set<Message> messages) {
 		super();
 		this.userId = userId;
 		this.userName = userName;
 		this.password = password;
-		this.enabled = enabled;
 		this.name = name;
 		this.activation = activation;
 		this.authorization = authorization;

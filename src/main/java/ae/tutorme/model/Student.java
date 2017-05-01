@@ -20,8 +20,8 @@ public class Student extends User
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL,mappedBy = "student")
     private Set<Rate> rates = new HashSet<>(0);
     
-    public Student(int userId, String userName, String password, boolean enabled, String name, Activation activation, Authorization authorization, Set<Message> messages, Set<Enrollment> enrollments, Set<Rate> rates) {
-		super(userId, userName, password, enabled, name, activation, authorization, messages);
+    public Student(int userId, String userName, String password, String name, Activation activation, Authorization authorization, Set<Message> messages, Set<Enrollment> enrollments, Set<Rate> rates) {
+		super(userId, userName, password, name, activation, authorization, messages);
 		this.enrollments = enrollments;
 		this.rates = rates;
 	}

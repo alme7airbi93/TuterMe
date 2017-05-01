@@ -15,11 +15,6 @@
 
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
-
-
-
-
-
     <div class="container-wrapper">
         <div class="container">
             <div class="page-header">

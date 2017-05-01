@@ -49,10 +49,8 @@
                 <!-- Nav Starts -->
                 <div class="navbar-collapse  collapse">
                     <ul class="nav navbar-nav navbar-right scroll">
-
-                        <a href="<c:url value="/" />">
-                            <li class="active">Home
-                        </a></li>
+                            <!-- so ? any idea ? not getting what are you asking  -->
+                        <li > <a href="<c:url value="/" />">Home </a></li><!-- this tage not working 100%, when I click on it doesn't work  -->
                         <ul class="nav navbar-nav">
                             <li class="dropdown dropdown-large">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b
@@ -145,10 +143,15 @@
                             <li><a href="#contact" data-toggle="modal" data-target="#myModal">Log In</a></li>
                         </c:if>
                         <c:if test="${user != null}">
+                        <c:if test="${user.authorization.role == 'ROLE_STUDENT' }">
+
+                            <li><a href="<c:url value="/student/mycourses"/>">My Courses</a></li>
+                        </c:if>
+                        </c:if>
+                        <c:if test="${user != null}">
 
                             <li><a href="<c:url value="/logout"/>">Logout</a></li>
                         </c:if>
-
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
