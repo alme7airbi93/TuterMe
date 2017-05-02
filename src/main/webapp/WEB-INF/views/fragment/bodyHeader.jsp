@@ -35,14 +35,16 @@
 
 
                 <div class="col-md-4 navbar-search">
+                    <form action="<c:url value="/search"/> " method="GET">
                     <div class="input-group stylish-input-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input name="search" type="text" class="form-control" placeholder="Search">
                         <span class="input-group-addon">
-                      <button type="submit">
+                      <input hidden type="submit">
                           <span class="glyphicon glyphicon-search"></span>
-                      </button>
+                      </input>
                   </span>
                     </div>
+                    </form>
                 </div>
 
 
@@ -59,77 +61,77 @@
                                 <ul class="dropdown-menu dropdown-menu-large row">
                                     <li class="col-sm-3">
                                         <ul>
-                                            <li class="dropdown-header"><img
+                                            <li class="dropdown-header"><img href="<c:url value="/search?search=mathematics"/>"
                                                     src="<c:url value="/resources/images/glyphicons/glyphicons-69-ruler.png"/>"/>
                                                 Mathematics
                                             </li>
-                                            <li><a href="#">Calculus</a></li>
-                                            <li><a href="#">Algebra</a></li>
-                                            <li><a href="#">Geometry</a></li>
+                                            <li><a href="<c:url value="/search?search=calculus"/> ">Calculus</a></li>
+                                            <li><a href="<c:url value="/search?search=algebra"/>">Algebra</a></li>
+                                            <li><a href="<c:url value="/search?search=geometry"/>">Geometry</a></li>
                                             <li class="divider"></li>
-                                            <li class="dropdown-header"><img
+                                            <li class="dropdown-header"><img href="<c:url value="/search?search=computer"/>"
                                                     src="<c:url value="/resources/images/glyphicons/glyphicons-87-display.png"/>"/>
                                                 IT & Computer science
                                             </li>
-                                            <li><a href="#">Programming</a></li>
-                                            <li><a href="#">Web Design</a></li>
-                                            <li><a href="#">Security & Networking</a></li>
+                                            <li><a href="<c:url value="/search?search=programming"/>">Programming</a></li>
+                                            <li><a href="<c:url value="/search?search=web Design"/>">Web Design</a></li>
+                                            <li><a href="<c:url value="/search?search=security"/>">Security & Networking</a></li>
 
                                         </ul>
                                     </li>
                                     <li class="col-sm-3">
                                         <ul>
-                                            <li class="dropdown-header"><img
+                                            <li class="dropdown-header"><img href="<c:url value="/search?search=health"/>"
                                                     src="<c:url value="/resources/images/glyphicons/glyphicons-595-stethoscope.png"/>"/>
                                                 Health & Nutrition
                                             </li>
-                                            <li><a href="#">Nutrition</a></li>
-                                            <li><a href="#">Health</a></li>
+                                            <li><a href="<c:url value="/search?search=nutrition"/>">Nutrition</a></li>
+                                            <li><a href="<c:url value="/search?search=health"/>">Health</a></li>
                                             <li class="divider"></li>
-                                            <li class="dropdown-header"><img
+                                            <li class="dropdown-header"><img href="<c:url value="/search?search=business"/>"
                                                     src="<c:url value="/resources/images/glyphicons/glyphicons-43-pie-chart.png"/>"/>
                                                 Business & Finance
                                             </li>
-                                            <li><a href="#">Business</a></li>
-                                            <li><a href="#">Finance</a></li>
-                                            <li><a href="#">Accounting</a></li>
-                                            <li><a href="#">Logistics</a></li>
+                                            <li><a href="<c:url value="/search?search=business"/>">Business</a></li>
+                                            <li><a href="<c:url value="/search?search=finance"/>">Finance</a></li>
+                                            <li><a href="<c:url value="/search?search=accounting"/>">Accounting</a></li>
+                                            <li><a href="<c:url value="/search?search=logistics"/>">Logistics</a></li>
                                         </ul>
                                     </li>
                                     <li class="col-sm-3">
                                         <ul>
-                                            <li class="dropdown-header"><img
+                                            <li class="dropdown-header"><img href="<c:url value="/search?search=langauges"/>"
                                                     src="<c:url value="/resources/images/glyphicons/glyphicons-72-book.png"/>"/>Langauges
                                             </li>
-                                            <li><a href="#">Arabic</a></li>
-                                            <li><a href="#">English</a></li>
-                                            <li><a href="#">Japanese</a></li>
+                                            <li><a href="<c:url value="/search?search=arabic"/>">Arabic</a></li>
+                                            <li><a href="<c:url value="/search?search=english"/>">English</a></li>
+                                            <li><a href="<c:url value="/search?search=japanese"/>">Japanese</a></li>
                                             <li class="divider"></li>
-                                            <li class="dropdown-header"><img
+                                            <li class="dropdown-header"><img href="<c:url value="/search?search=physics"/>"
                                                     src="<c:url value="/resources/images/glyphicons/glyphicons-65-lightbulb.png"/>"/>Physics
                                             </li>
-                                            <li><a href="#">Thermodynamics</a></li>
-                                            <li><a href="#">Mechanical</a></li>
-                                            <li><a href="#">Electricity and magnetism</a></li>
+                                            <li><a href="<c:url value="/search?search=thermodynamics"/>">Thermodynamics</a></li>
+                                            <li><a href="<c:url value="/search?search=mechanical"/>">Mechanical</a></li>
+                                            <li><a href="<c:url value="/search?search=electricity"/>">Electricity and magnetism</a></li>
                                         </ul>
                                     </li>
                                     <li class="col-sm-3">
                                         <ul>
-                                            <li class="dropdown-header"><img
+                                            <li class="dropdown-header"><img href="<c:url value="/search?search=history"/>"
                                                     src="<c:url value="/resources/images/glyphicons/glyphicons-371-globe-af.png"/>"/>Geography
                                                 & history
                                             </li>
-                                            <li><a href="<c:url value="/logout"/>">History</a></li>
-                                            <li><a href="#">Geography</a></li>
-                                            <li><a href="#">Ecology</a></li>
+                                            <li><a href="<c:url value="/search?search=history"/>">History</a></li>
+                                            <li><a href="<c:url value="/search?search=geography"/>">Geography</a></li>
+                                            <li><a href="<c:url value="/search?search=ecology"/>">Ecology</a></li>
                                             <li class="divider"></li>
-                                            <li class="dropdown-header"><img
+                                            <li class="dropdown-header"><img href="<c:url value="/search?search=media"/>"
                                                     src="<c:url value="/resources/images/glyphicons/glyphicons-12-camera.png"/>"/>Media
                                             </li>
-                                            <li><a href="#">Photography</a></li>
-                                            <li><a href="#">Photoshop</a></li>
-                                            <li><a href="#">Video editing</a></li>
-                                            <li><a href="#">Cinematology</a></li>
+                                            <li><a href="<c:url value="/search?search=photography"/>">Photography</a></li>
+                                            <li><a href="<c:url value="/search?search=photoshop"/>">Photoshop</a></li>
+                                            <li><a href="<c:url value="/search?search=video"/>">Video editing</a></li>
+                                            <li><a href="<c:url value="/search?search=cinematology"/>">Cinematology</a></li>
                                         </ul>
                                     </li>
                                 </ul>

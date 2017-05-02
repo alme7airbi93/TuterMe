@@ -15,19 +15,23 @@
 <% Topic topic = new Topic();
     request.setAttribute("topic",topic); %>
 
-<jsp:useBean id="Course" scope="request" class="ae.tutorme.model.Course">
-    <jsp:setProperty name="course" property="*"/>
-</jsp:useBean>
 <jsp:useBean id="Topic" scope="request" class="ae.tutorme.model.Topic">
     <jsp:setProperty name="topic" property="*"/>
 </jsp:useBean>
+
+
 
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
 
     <c:url var="updateCourse" value="/course/update"/>
 
-    <form:form role="form" class="form-horizontal" action="${updateCourse}" method="post" commandName="course">
+    <form:form role="form" class="form-horizontal" action="${updateCourse}" method="post" modelAttribute="course" enctype="multipart/form-data">
+        <form:hidden path="courseId" />
+        <form:hidden path="category" />
+        <form:hidden path="instructor" />
+        <form:hidden path="moderator" />
+        <form:hidden path="price" />
         <h1>Course information: </h1>
         <div class="form-group">
             <div class="col-sm-9">
@@ -52,9 +56,7 @@
 
 
         <div class="col-sm-5">
-            <button type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px">
-                update
-            </button>
+            <input type="submit" placeholder="Update" class="btn btn-primary btn-sm" style="margin-bottom: 5px" />
         </div>
     </form:form>
 

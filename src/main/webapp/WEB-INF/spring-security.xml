@@ -39,15 +39,16 @@
                 delete-cookies="true"
                 logout-success-url="/" />
 
-        <remember-me key="uniqueAndSecret" token-validity-seconds="86400"/>
+        <remember-me data-source-ref="dataSource" token-validity-seconds="86400"/>
 
        <csrf disabled="true"/>
    </http>
 
+
     <!-- logout-url="/j_logout" -->
 
    <authentication-manager>
-       <authentication-provider  >
+       <authentication-provider >
            <!--<password-encoder hash="md5" />-->
             <!-- if not working add datasource up there -->
             <jdbc-user-service data-source-ref="dataSource"
@@ -74,4 +75,10 @@
 
 
 
-</beans:beans>
+
+    <!-- Authentication Manager (uses same UserDetailsService as RememberMeService)-->
+
+
+
+
+        </beans:beans>

@@ -36,6 +36,7 @@
                          class="img-responsive" alt="img01"/>
                     <span class="post-title">
                       <b>${course.category.name}</b>
+                        <b>${course.rating}</b>
                   </span>
                 </div>
                 <div class="info">

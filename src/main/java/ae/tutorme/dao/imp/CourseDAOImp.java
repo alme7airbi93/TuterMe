@@ -70,7 +70,15 @@ public class CourseDAOImp implements CourseDAO {
         query.executeUpdate();
 	}
 
-	@Override
+    @Override
+    public List<Course> searchCourses(String keyward) {
+
+
+
+        return null;
+    }
+
+    @Override
 	public CourseDTO getCourseDTOById(int id) {
 		Course course = getCourseById(id);
 		return course == null ? null : new CourseDTO(course);

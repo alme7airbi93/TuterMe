@@ -81,6 +81,7 @@ public class CourseMVC {
         i.getCourses().add(course);
         category.getCourses().add(course);
         categoryDAO.updateCategory(category);
+        courseDAO.updateCourse(course);
 
         MultipartFile courseImage = course.getCourseImage();
 
@@ -100,17 +101,10 @@ public class CourseMVC {
 
         }
         // adding the image to the directory
-        if(courseImage != null && !courseImage.isEmpty())
-        {
-            try
-            {
-                courseImage.transferTo(file);
-
-            } catch (Exception e)
-            {
-                e.printStackTrace();
-                throw new RuntimeException("Course image saving failed.", e);
-            }
+        try {
+            saveMultipart(courseImage,file);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return "redirect:/home";
     }
@@ -130,6 +124,7 @@ public class CourseMVC {
         for (Course c : instructor.getCourses()) {
             if (c.getCourseId() == courseId) {
                 match = true;
+                break;
             }
         }
         if (course == null || !match) {
@@ -140,6 +135,55 @@ public class CourseMVC {
         return "updatecourse";
     }
 
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public String updateCourse(@ModelAttribute("Course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
+
+        MultipartFile courseImage = course.getCourseImage();
+        Instructor i = (Instructor) session.getAttribute("user");
+
+        // Making file path
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "/WEB-INF/resources/images/instructor/"+ i.getUserId()+"/"+
+                "courses/"+ course.getCourseId() +"/" + course.getCourseId()+"." + "png");
+        // creating the directories
+        File file = new File(path.toString());
+        if (!file.exists()) {
+            if (file.mkdirs()) {
+                System.out.println("file :" + file.toString() +" created");
+            }else
+            {
+                System.out.println("File didn't created");
+            }
+
+        }
+        // adding the image to the directory
+        try {
+            saveMultipart(courseImage,file);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        Category category = course.getCategory();
+
+        for (Course c : category.getCourses()) {
+            if (c.getCourseId() == course.getCourseId()) {
+                category.getCourses().remove(c);
+                category.getCourses().add(course);
+            }
+        }
+        categoryDAO.updateCategory(category);
+        return "redirect:/course/updateCourse/"+course.getCourseId();
+
+    }
+
+    private void saveMultipart(MultipartFile multipartFile,File file) throws Exception{
+        if(multipartFile != null && !multipartFile.isEmpty())
+        {
+                multipartFile.transferTo(file);
+
+        }
+    }
 
 
 

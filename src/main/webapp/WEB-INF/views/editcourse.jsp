@@ -16,7 +16,7 @@
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
 
-    <c:url var="regUrl" value="/instructor/savecourse"/>
+    <c:url var="regUrl" value="/instructor/updatecourse"/>
 
     <form:form role="form" class="form-horizontal" action="${regUrl}" method="post" commandName="savecourse" >
         <h1>Course information: </h1>
@@ -42,8 +42,7 @@
 
 
         <div class="col-sm-5">
-            <button type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px">
-                Submit</button>
+            <input type="submit" class="btn btn-primary btn-sm" style="margin-bottom: 5px"/>
         </div>
 
 

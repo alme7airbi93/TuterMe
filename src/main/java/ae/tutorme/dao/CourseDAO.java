@@ -25,4 +25,7 @@ public interface CourseDAO {
     CourseDTO updateCourse(int id, CourseDTO course);
     
     void deleteCourse(int id);
+
+
+    List<Course> searchCourses(String keyward);
 }
