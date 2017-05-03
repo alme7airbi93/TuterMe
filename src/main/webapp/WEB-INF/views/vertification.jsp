@@ -20,6 +20,13 @@ This is the fragment we have the problem with
     <div class="head-line"><p>Please check the E-mail you registered with, as a vertification E-mail has been sent, <a href="<c:url value="/" />">click here to login</a></p></div>
 
 </div>
+
+<div>
+    <form action="<c:url value="/resend"/> " method="post">
+        <input type="text" name="userName" placeholder="User Name "/>
+        <input type="submit" placeholder="Resend"/>
+    </form>
+</div>
 <!-- works -->
 
 <!-- Footer Starts -->

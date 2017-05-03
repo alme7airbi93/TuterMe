@@ -1,5 +1,6 @@
 package ae.tutorme.restController;
 
+import ae.tutorme.service.imp.TutormeMailSender;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,11 +27,15 @@ public class StudentResource {
 	
 	@Autowired
 	private Converter converter;
+
+	@Autowired
+	private TutormeMailSender tutormeMailSender;
 	
 	@RequestMapping(value="/add", method=RequestMethod.POST)
 	public ResponseEntity<?> addStudent(@RequestBody StudentDTO Student) {
 		try {
 			User user = userDAO.saveUser(converter.toStudent(Student));
+			tutormeMailSender.sendVirfication(user);
 			return new ResponseEntity<>(new StudentDTO(user), HttpStatus.OK);
 		} catch (Exception ex) {
 			LOG.error("addStudent()", ex);

@@ -35,9 +35,6 @@
         <div class="col-md-12">
             <div class="carousel slide slider-border" data-ride="carousel" data-type="multi" data-interval="3000" id="myCarousel2">
                 <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/${course.courseId}.png" />" class="img-responsive"></a></div>
-                    </div>
                     <c:forEach var="topic" items="${course.topics}">
                     <c:forEach var="lesson" items="${topic.lessons}">
                     <div class="item">
@@ -46,10 +43,7 @@
 
                     </c:forEach>
                     </c:forEach>
-
                 </div>
-
-
             </div>
             <a class="left carousel-control left-arrow" href="#myCarousel2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
             <a class="right carousel-control left-arrow" href="#myCarousel2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>

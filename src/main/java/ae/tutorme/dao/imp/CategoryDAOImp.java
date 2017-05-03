@@ -79,6 +79,6 @@ public class CategoryDAOImp implements CategoryDAO{
 
 	@Override
 	public void updateCategory(Category cat) {
-		sessionFactory.getCurrentSession().update(cat);
+		sessionFactory.getCurrentSession().saveOrUpdate(cat);
 	}
 }

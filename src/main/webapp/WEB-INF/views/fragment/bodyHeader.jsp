@@ -152,6 +152,10 @@
                         </c:if>
                         <c:if test="${user != null}">
 
+                            <li><a href="<c:url value="/user/update"/>">update profile</a></li>
+                        </c:if>
+                        <c:if test="${user != null}">
+
                             <li><a href="<c:url value="/logout"/>">Logout</a></li>
                         </c:if>
                     </ul>
@@ -267,6 +271,9 @@
                                             </div>
                                         </form:form>
                                     </div>
+                            <div>
+                                <a href="<c:url value="/resend"/> ">  Resend verfy code</a>
+                            </div>
                         </div>
                     </div>
                 </div>

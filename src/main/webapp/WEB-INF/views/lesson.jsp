@@ -19,35 +19,36 @@
 
     <div class="row ">
         <div class="col-md-12"><h1>${topic.topicName}</h1></div>
-        <div class="col-md-12">
-            <div class="carousel slide slider-border" data-ride="carouse" data-type="multi" data-interval="3000" id="myCarousel3">
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="col-md-2 col-sm-6 col-xs-12"><a href="#"><img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/${course.courseId}.png" />" class="img-responsive"></a></div>
-                    </div>
-                    <c:forEach var="lesson" items="${topic.lessons}">
-                        <div class="item">
-                            <a href="<c:url value="/student/course/${courseId}/topic/${topic.id}/lesson/${lesson.id}"/> ">
-                                <div class="col-md-2 col-sm-6 col-xs-12">
-                                    <img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/topics/${topic.id}/${lesson.id}.png"/>" class="img-responsive">
-                        </div>
-                            </a>
-                        </div>
+            <div class="col-md-12 mb-40">
+                <div class="carousel slide slider-border" data-ride="carouse" data-type="multi" data-interval="3000" id="myCarousel${topic.id}">
+                     <div class="carousel-inner">
+                        <% int index = 0; %>
+                          <c:forEach var="lesson" items="${topic.lessons}">
+                        <% if(index == 0)  { %>
+                            <div class="item active">
+                               <%  index++; }else { %>
+                            <div class="item">
+                                <% } %>
+                                <div class="col-md2 col-sm-6 col-xs-12">
+                                    <a href="<c:url value="/student/course/${courseId}/topic/${topic.id}/lesson/${lesson.id}"/> ">
+                                        <div class="col-md-2 col-sm-6 col-xs-12">
+                                             <img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/topics/${topic.id}/${lesson.id}.png"/>" class="img-responsive">
+                                         </div>
+                                    </a>
+                                </div>
+                            </div>
                     </c:forEach>
                 </div>
 
 
             </div>
-            <a class="left carousel-control left-arrow" href="#myCarousel3" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-            <a class="right carousel-control left-arrow" href="#myCarousel3" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+            <a class="left carousel-control left-arrow" href="#myCarousel${topic.id}" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="right carousel-control left-arrow" href="#myCarousel${topic.id}" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
         </div>
-
-    </div>
-</c:forEach>
-
+        </div>
 </div>
 
-
+</c:forEach>
 </div>
 <!-- works -->
 

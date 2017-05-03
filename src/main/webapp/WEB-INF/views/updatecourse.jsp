@@ -24,13 +24,10 @@
 <div class="container" style="margin-bottom:30px; padding-top:100px; width:100%; rgba(255,255,255,0.80)">
 
 
-    <c:url var="updateCourse" value="/course/update"/>
+    <c:url var="updateCourse" value="/course/update/"/>
 
     <form:form role="form" class="form-horizontal" action="${updateCourse}" method="post" modelAttribute="course" enctype="multipart/form-data">
         <form:hidden path="courseId" />
-        <form:hidden path="category" />
-        <form:hidden path="instructor" />
-        <form:hidden path="moderator" />
         <form:hidden path="price" />
         <h1>Course information: </h1>
         <div class="form-group">
@@ -44,6 +41,17 @@
             <div class="col-sm-9">
                 <form:textarea path="description" rows="5" cols="30" class="form-control" id="coursedesc"
                                placeholder="Enter course description here..."/>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <div class="col-sm-9">
+                <p>Select category </p>
+                <select  name="categoryId" id="category"  class="form:input-larg">
+                    <c:forEach var="category" items="${categories}">
+                        <option  value="${category.categoryId}" > ${category.name} </option>
+                    </c:forEach>
+                </select>
             </div>
         </div>
 
@@ -66,7 +74,7 @@
             <h3>${topic.topicName}</h3>
             <c:forEach var="lesson" items="${topic.lessons}">
                 <h4>${lesson.lessonName}</h4>
-                <img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/topics/${topic.id}/${lesson.id}.png"/>">
+                <img style="width: 50px; height: 50px" src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/topics/${topic.id}/${lesson.id}.png"/>">
                 <img href="<c:url value="/lesson/update/${lesson.id}" />" src="<c:url value="/resources/images/glyphicons/glyphicons-31-pencil.png"/>">
             </c:forEach>
             <h4>add lesson</h4>

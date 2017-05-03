@@ -2,6 +2,7 @@ package ae.tutorme.dto;
 
 
 import ae.tutorme.model.Lesson;
+import ae.tutorme.utils.HashMD5;
 
 import java.io.Serializable;
 
@@ -28,7 +29,7 @@ public class LessonDTO implements Serializable {
         this.id = lesson.getId();
         this.lessonName = lesson.getLessonName();
         this.lessonNumber = lesson.getLessonNumber();
-        this.materialPath = lesson.getMaterialPath();
+        this.materialPath = HashMD5.getHashPath(lesson.getMaterialPath());
         this.topicId = lesson.getTopic() == null ? 0 : lesson.getTopic().getId();
     }
 

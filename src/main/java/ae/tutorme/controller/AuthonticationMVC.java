@@ -13,7 +13,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.jws.soap.SOAPBinding;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
 import java.util.Date;
@@ -35,6 +39,9 @@ public class AuthonticationMVC {
     @Autowired
     private ActivationDAO activationDAO;
 
+    @Autowired
+    private TutormeMailSender tutormeMailSender;
+
 
     @RequestMapping("/login/fail/cred")
     public String authoncitachonFailCredintal(Model model, HttpSession session) {
@@ -46,11 +53,10 @@ public class AuthonticationMVC {
     }
 
     @RequestMapping("/login/fail/dis")
-    public String authoncitachonFailDisabled( ) {
+    public String authoncitachonFailDisabled() {
 
         return "vertification";
     }
-
 
 
     @RequestMapping("/virfication/{uuid}")
@@ -71,5 +77,28 @@ public class AuthonticationMVC {
         return "index";
     }
 
+    @RequestMapping(value = "/resend", method = RequestMethod.POST)
+    public String resendCode(@RequestParam("userName")String userName, Model model) {
+        User user = userDAO.getUserBuUserName(userName);
+        if (user == null) {
+            model.addAttribute("message", "We couldn't find this email in our system please register again");
+            return "vertification";
+        }
+
+        tutormeMailSender.sendVirfication(user);
+        model.addAttribute("message", "A verification email has been send again ");
+        return "vertification";
+
+    }
+
+    @RequestMapping(value = "/resend", method = RequestMethod.GET)
+    public String resend() {
+        return "vertification";
+
+    }
+
+
+
 
 }
+

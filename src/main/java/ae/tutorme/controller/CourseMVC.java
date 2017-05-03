@@ -51,6 +51,51 @@ public class CourseMVC {
     @RequestMapping(method = RequestMethod.POST, value = "/savecourse")
     public String saveCourse(@ModelAttribute("Course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
 
+        return updateOrSaveCourse(course, result, request, session,false);
+    }
+
+    @RequestMapping("/addCourse")
+    public String createCourse() {
+        return "createcourse";
+    }
+
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/updateCourse/{courseId}")
+    public String getCourseById(@PathVariable int courseId, HttpServletRequest request,HttpSession session) {
+        Course course = courseDAO.getCourseById(courseId);
+        Instructor instructor = (Instructor) session.getAttribute("user");
+        boolean match = false;
+        for (Course c : instructor.getCourses()) {
+            if (c.getCourseId() == courseId) {
+                match = true;
+                break;
+            }
+        }
+        if (course == null || !match) {
+            return "404";
+        }
+        request.setAttribute("course",course);
+        return "updatecourse";
+    }
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/update")
+    public String update(@ModelAttribute("course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
+
+       return updateOrSaveCourse(course, result, request, session,true);
+
+    }
+
+    private void saveMultipart(MultipartFile multipartFile,File file) throws Exception{
+        if(multipartFile != null && !multipartFile.isEmpty())
+        {
+                multipartFile.transferTo(file);
+
+        }
+    }
+
+    public String updateOrSaveCourse(Course course, BindingResult result, HttpServletRequest request, HttpSession session,boolean update) {
         if(result.hasErrors())
         {
             return "redirect:/addCourse";
@@ -64,7 +109,7 @@ public class CourseMVC {
         }
         int catId = 0;
         try {
-             catId = Integer.parseInt(request.getParameter("categoryId"));
+            catId = Integer.parseInt(request.getParameter("categoryId"));
         } catch (NullPointerException e) {
 
         } catch (NumberFormatException n) {
@@ -79,7 +124,16 @@ public class CourseMVC {
         course.setCategory(category);
         course.setInstructor(i);
         i.getCourses().add(course);
-        category.getCourses().add(course);
+        if (!update) {
+            category.getCourses().add(course);
+        }
+        for (Course c : category.getCourses()) {
+            if (c.getCourseId() == course.getCourseId()) {
+                category.getCourses().remove(c);
+                category.getCourses().add(course);
+                break;
+            }
+        }
         categoryDAO.updateCategory(category);
         courseDAO.updateCourse(course);
 
@@ -107,82 +161,6 @@ public class CourseMVC {
             e.printStackTrace();
         }
         return "redirect:/home";
-    }
-
-    @RequestMapping("/addCourse")
-    public String createCourse() {
-        return "createcourse";
-    }
-
-
-
-    @RequestMapping(method = RequestMethod.GET, value = "/updateCourse/{courseId}")
-    public String getCourseById(@PathVariable int courseId, HttpServletRequest request,HttpSession session) {
-        Course course = courseDAO.getCourseById(courseId);
-        Instructor instructor = (Instructor) session.getAttribute("user");
-        boolean match = false;
-        for (Course c : instructor.getCourses()) {
-            if (c.getCourseId() == courseId) {
-                match = true;
-                break;
-            }
-        }
-        if (course == null || !match) {
-            return "404";
-        }
-
-        request.setAttribute("course",course);
-        return "updatecourse";
-    }
-
-
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateCourse(@ModelAttribute("Course") Course course, BindingResult result, HttpServletRequest request, HttpSession session) {
-
-        MultipartFile courseImage = course.getCourseImage();
-        Instructor i = (Instructor) session.getAttribute("user");
-
-        // Making file path
-        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-        path = Paths.get(rootDirectory + "/WEB-INF/resources/images/instructor/"+ i.getUserId()+"/"+
-                "courses/"+ course.getCourseId() +"/" + course.getCourseId()+"." + "png");
-        // creating the directories
-        File file = new File(path.toString());
-        if (!file.exists()) {
-            if (file.mkdirs()) {
-                System.out.println("file :" + file.toString() +" created");
-            }else
-            {
-                System.out.println("File didn't created");
-            }
-
-        }
-        // adding the image to the directory
-        try {
-            saveMultipart(courseImage,file);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        Category category = course.getCategory();
-
-        for (Course c : category.getCourses()) {
-            if (c.getCourseId() == course.getCourseId()) {
-                category.getCourses().remove(c);
-                category.getCourses().add(course);
-            }
-        }
-        categoryDAO.updateCategory(category);
-        return "redirect:/course/updateCourse/"+course.getCourseId();
-
-    }
-
-    private void saveMultipart(MultipartFile multipartFile,File file) throws Exception{
-        if(multipartFile != null && !multipartFile.isEmpty())
-        {
-                multipartFile.transferTo(file);
-
-        }
     }
 
 
