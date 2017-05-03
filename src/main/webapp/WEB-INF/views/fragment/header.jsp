@@ -15,6 +15,7 @@
 <!-- animate.css -->
 <link rel="stylesheet" href="<c:url value="/resources/assets/animate/animate.css"/>" />
 <link rel="stylesheet" href="<c:url value="/resources/assets/animate/set.css"/>" />
+<link rel="stylesheet" href="<c:url value="/resources/assets/error.css"/>" />
 
 <!-- gallery -->
 <link rel="stylesheet" href="<c:url value="/resources/assets/gallery/blueimp-gallery.min.css"/>">
