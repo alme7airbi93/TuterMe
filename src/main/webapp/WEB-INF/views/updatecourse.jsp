@@ -75,7 +75,7 @@
             <c:forEach var="lesson" items="${topic.lessons}">
                 <h4>${lesson.lessonName}</h4>
                 <img style="width: 50px; height: 50px" src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/topics/${topic.id}/${lesson.id}.png"/>">
-                <img href="<c:url value="/lesson/update/${lesson.id}" />" src="<c:url value="/resources/images/glyphicons/glyphicons-31-pencil.png"/>">
+                <%--<img href="<c:url value="/lesson/update/${lesson.id}" />" src="<c:url value="/resources/images/glyphicons/glyphicons-31-pencil.png"/>">--%>
             </c:forEach>
             <h4>add lesson</h4>
            <a href="<c:url value="/lesson/add/${course.courseId}/${topic.id}" />">
@@ -85,7 +85,7 @@
 
 
         <c:url var="addTopic" value="/topic/add/${course.courseId}"/>
-        <form:form role="form" class="form-horizontal" action="${addTopic}" method="post" commandName="topic">
+        <form:form role="form" class="form-horizontal " action="${addTopic}" method="post" commandName="topic">
             <h5>You can add topics here and modify them later on !!! </h5>
             <div class="form-group">
                 <div class="col-sm-9">
@@ -102,12 +102,7 @@
     <!-- works -->
 
     <!-- Footer Starts -->
-    <div class="footer text-center spacer">
-        <p class="wowload flipInX"><a href="#"><i class="fa fa-facebook fa-2x"></i></a> <a href="#"><i
-                class="fa fa-instagram fa-2x"></i></a> <a href="#"><i class="fa fa-twitter fa-2x"></i></a> <a
-                href="#"><i class="fa fa-flickr fa-2x"></i></a></p>
-        جميع الحقوق محفوظه حق قروب علي الزعابي :)
-    </div>
+  <%@ include file="fragment/footer.jsp"%>
     <!-- # Footer Ends -->
 
 
