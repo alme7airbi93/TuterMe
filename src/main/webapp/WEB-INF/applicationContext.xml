@@ -9,7 +9,7 @@
           class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
 
-        <property name="url" value="jdbc:mysql://localhost:3306/tutorme?characterEncoding=utf8&amp;useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;seLegacyDatetimeCode=false&amp;serverTimezone=GMT" />
+        <property name="url" value="jdbc:mysql://localhost:3306/tutorme?useUnicode=true&amp;connectionCollation=utf8_general_ci&amp;characterSetResults=utf8&amp;characterEncoding=utf-8"/>
         <property name="username" value="root" />
         <property name="password" value="3deemala7sas" />
     </bean>

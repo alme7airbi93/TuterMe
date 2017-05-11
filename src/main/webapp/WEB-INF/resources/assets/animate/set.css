@@ -1,8 +1,9 @@
 .grid {
 	position: relative;
 	margin: 0 auto;
-	margin-left:30px;
-	margin-bottom:25px;
+	margin-left:5%;
+	margin-right:5%;
+	margin-bottom:10%;
 	list-style: none;
 	text-align: center;
 	width:auto;

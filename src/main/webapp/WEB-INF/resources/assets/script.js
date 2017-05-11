@@ -39,3 +39,15 @@ $('.carousel').swipe( {
 
 
 
+$(function() {    		
+			//alert($('#rating').val());
+                        
+                        
+                        var width = 0;
+                        for(var i = 0; i<document.getElementsByName('rating').length; i++){
+                            width = 16*parseFloat(document.getElementsByName('rating')[i].value);
+                            document.getElementsByName('stars')[i].innerHTML = 
+                                    '<span style="width:'+width+'px;"></span>';
+                        }
+                        });
+		

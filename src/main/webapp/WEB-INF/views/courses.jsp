@@ -6,7 +6,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>TeachMe || علمني</title>
-
+    
+	<style type="text/css">
+		span.stars, span.stars span {
+			display: block;
+			background: url(../resources/images/stars.png) 0 -16px repeat-x;
+			width: 80px;
+			height: 16px;
+		}
+	
+		span.stars span {
+			background-position: 0 0;
+		}
+	</style>
     <%@ include file="fragment/header.jsp" %>
 
 </head>
@@ -29,20 +41,28 @@
     <div id="works" class=" clearfix grid" style="rgba(255,255,255,0.8)">
 
         <c:forEach var="course" items="${courses}">
-        <div class="col-xs-6 col-sm-3 col-md-2">
+            
+        <div href="<c:url value="/courseDetails/${course.courseId}"/>" class="col-xs-6 col-sm-3 col-md-2">
+            
             <div class="col-item">
                 <div class="post-img-content">
                     <img src="<c:url value="/resources/images/instructor/${course.instructor.userId}/courses/${course.courseId}/${course.courseId}.png" />"
                          class="img-responsive" alt="img01"/>
                     <span class="post-title">
                       <b>${course.category.name}</b>
-                        <b>${course.rating}</b>
+                        
                   </span>
                 </div>
                 <div class="info">
                     <div class="row">
                         <div class="price col-md-12">
                             <h5>${course.name}</h5>
+                        </div>
+                    </div>
+                        <input type="hidden" name="rating" value="${course.rating}" />
+                         <div class="row">
+                        <div class="col-md-12">
+                            <h5><p><span class="stars" name="stars"></span></p></h5>
                         </div>
                     </div>
                     <div class="row">

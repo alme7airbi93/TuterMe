@@ -1,6 +1,7 @@
 <%@ page import="ae.tutorme.model.Student" %>
 <%@ page import="ae.tutorme.model.Instructor" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%
     Instructor instructor = new Instructor();
     Student student = new Student();
@@ -23,6 +24,13 @@
         <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="top-nav">
             <div class="container">
                 <div class="navbar-header">
+
+                    Language : <a href="<c:url value="?lang=en" />">English</a>|<a href="<c:url value="?lang=ar" />">Arabic</a>
+
+                </div>
+
+                <div class="navbar-header">
+                
 
                     <a class="navbar-brand" href="#home">
 
@@ -51,8 +59,10 @@
                 <!-- Nav Starts -->
                 <div class="navbar-collapse  collapse">
                     <ul class="nav navbar-nav navbar-right scroll">
-                            <!-- so ? any idea ? not getting what are you asking  -->
-                        <li > <a href="<c:url value="/" />">Home </a></li><!-- this tage not working 100%, when I click on it doesn't work  -->
+                    <div id="google_translate_element"></div>
+
+
+                        <li > <a href="<c:url value="/" />"><spring:message code="label.home" text="Home"/> </a></li>
                         <ul class="nav navbar-nav">
                             <li class="dropdown dropdown-large">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <b
@@ -151,10 +161,8 @@
                         </c:if>
                         </c:if>
                         <c:if test="${user != null}">
-
-                            <li><a href="<c:url value="/user/update"/>">update profile</a></li>
-                        </c:if>
-                        <c:if test="${user != null}">
+                        
+                        
 
                             <li><a href="<c:url value="/logout"/>">Logout</a></li>
                         </c:if>
@@ -271,9 +279,6 @@
                                             </div>
                                         </form:form>
                                     </div>
-                            <div>
-                                <a href="<c:url value="/resend"/> ">  Resend verfy code</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -354,3 +359,5 @@
         </div>
     </div>
 </div>
+
+
